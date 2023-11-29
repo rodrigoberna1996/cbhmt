@@ -331,6 +331,7 @@ const {title} = Astro.props;
 
 
 <script src="/asset/library/@splidejs/splide@3.2.2/dist/js/splide.min.js" type="text/javascript"></script>
+
 <script>
     var splide = new Splide(".splide");
     var bar = splide.root.querySelector(".my-slider-progress-bar");
@@ -342,19 +343,7 @@ const {title} = Astro.props;
 
     splide.mount();
 
-    // Capability progressbar
-    var capacity_splide = new Splide(".capacity_slider");
-    var capacity_bar = capacity_splide.root.querySelector(
-        ".capa-slider-progress-bar"
-    );
 
-    capacity_splide.on("mounted move", function () {
-        var end = capacity_splide.Components.Controller.getEnd() + 1;
-        capacity_bar.style.width =
-            String((100 * (capacity_splide.index + 1)) / end) + "%";
-    });
-
-    capacity_splide.mount();
 
     function slider() {
         let splides = $(".slider, .capacity_slider, .mobile_process_slider");
@@ -479,51 +468,6 @@ const {title} = Astro.props;
 
     testimonial_splide();
 
-    // All service gallery slider
-    var splide1 = new Splide(".gallery_service-1");
-    var bar1 = splide1.root.querySelector(".gallery_progress_bar-1");
-    // Update the bar width:
-    splide1.on("mounted move", function () {
-        var end = splide1.Components.Controller.getEnd() + 1;
-        bar1.style.width = String((100 * (splide1.index + 1)) / end) + "%";
-    });
-    splide1.mount();
-
-    var splide2 = new Splide(".gallery_service-2");
-    var bar2 = splide2.root.querySelector(".gallery_progress_bar-2");
-
-    splide2.on("mounted move", function () {
-        var end = splide2.Components.Controller.getEnd() + 1;
-        bar2.style.width = String((100 * (splide2.index + 1)) / end) + "%";
-    });
-    splide2.mount();
-
-    var splide3 = new Splide(".gallery_service-3");
-    var bar3 = splide3.root.querySelector(".gallery_progress_bar-3");
-
-    splide3.on("mounted move", function () {
-        var end = splide3.Components.Controller.getEnd() + 1;
-        bar3.style.width = String((100 * (splide3.index + 1)) / end) + "%";
-    });
-    splide3.mount();
-
-    var splide4 = new Splide(".gallery_service-4");
-    var bar4 = splide4.root.querySelector(".gallery_progress_bar-4");
-
-    splide4.on("mounted move", function () {
-        var end = splide4.Components.Controller.getEnd() + 1;
-        bar4.style.width = String((100 * (splide4.index + 1)) / end) + "%";
-    });
-    splide4.mount();
-
-    var splide5 = new Splide(".gallery_service-5");
-    var bar5 = splide5.root.querySelector(".gallery_progress_bar-5");
-
-    splide5.on("mounted move", function () {
-        var end = splide5.Components.Controller.getEnd() + 1;
-        bar5.style.width = String((100 * (splide5.index + 1)) / end) + "%";
-    });
-    splide5.mount();
 
     function slider1() {
         let splides = $(
