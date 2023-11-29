@@ -1,0 +1,23 @@
+.testimonial_splide .is-active .testimonial_content_block {
+    opacity: 1;
+}
+
+.testimonial_splide .splide__slide {
+    width: 45% !important;
+}
+
+.testimonial_splide ul.splide__pagination {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .testimonial_splide .splide__slide {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .testimonial_splide .splide__slide {
+        width: 100% !important;
+    }
+}

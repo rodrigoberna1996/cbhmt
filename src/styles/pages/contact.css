@@ -1,0 +1,29 @@
+.contact_input {
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  width: 50%;
+}
+
+.section_contact {
+  padding-top: 2.813vw;
+  padding-bottom: 4.813vw;
+}
+
+.contact_captcha {
+  margin-bottom: 1.2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .contact_input {
+    width: 100%;
+  }
+}

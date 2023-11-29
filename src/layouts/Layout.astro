@@ -1,0 +1,552 @@
+---
+import Navbar from "../components/navbar/navbar.astro";
+import Footer from "../components/footer.astro";
+import "../styles/pages/global.css";
+interface Props {
+    title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-wf-page="64d63a4f8bf48fdf578cbd69">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="stylesheet" href="/asset/npm/@splidejs/splide@3.2.2/dist/css/splide-core.min.css"/>
+
+    <script src="/asset/ajax/libs/gsap/3.11.4/gsap.min.js" type="text/javascript"></script>
+    <script src="/asset/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"
+            integrity="sha256-7P1m35iIZBh/pYVVKHCohnPhtxGwgA+Q7gUGt69QG80=" crossorigin="anonymous"></script>
+    <script src="/asset/ajax/libs/gsap/latest/TweenMax.min.js" type="text/javascript"></script>
+    <style>
+        .splide__track {
+            overflow: visible;
+        }
+    </style>
+
+    <meta name="generator" content={Astro.generator}/>
+    <title>{title}</title>
+</head>
+<body>
+<Navbar/>
+<slot/>
+<Footer/>
+</body>
+</html>
+<style is:global>
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+        );
+    }
+
+    html {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+        background-size: 224px;
+    }
+
+    code {
+        font-family: Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+</style>
+<script src="/asset/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
+
+<script src="/asset/64748b66fa7c0d5993fc7935/js/webflow.70aa0cd09.js"
+        type="text/javascript"></script>
+
+<script>
+    gsap.config({
+        autoSleep: 60,
+        force3D: false,
+        nullTargetWarn: false,
+        trialWarn: false,
+        units: {left: "%", top: "%", rotation: "rad"},
+    });
+</script>
+<script>
+    var scaleElement = document.querySelector(".cursor");
+    var scaleProperties = {scale: 1.2, duration: 0.3, ease: "power2.out"};
+
+    $("a, .splide__arrow, .scroll_up_block").mouseenter(function () {
+        gsap.to(scaleElement, {scale: 2, opacity: 0.4, duration: 0.5});
+    });
+
+    $("a, .splide__arrow, .scroll_up_block").mouseleave(function () {
+        gsap.to(scaleElement, {scale: 1, opacity: 1, duration: 0.5});
+    });
+
+    /* Custom cursor */
+    var cursor = $(".drag-circle-block"),
+        follower = $(".cursor");
+    var posX = 0,
+        posY = 0;
+    var mouseX = 0,
+        mouseY = 0;
+
+    TweenMax.to({}, 0.01, {
+        repeat: -1,
+        onRepeat: function () {
+            posX += (mouseX - posX) / 9;
+            posY += (mouseY - posY) / 9;
+
+            TweenMax.set(follower, {css: {left: posX - 12, top: posY - 12}});
+            TweenMax.set(cursor, {css: {left: mouseX, top: mouseY}});
+        },
+    });
+
+    $(document).on("mousemove", function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    $(".mobile_toggle_block").on("click", function () {
+        $(".language_dropdown").toggleClass("active");
+    });
+</script>
+<!-- After page load animation -->
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        window.onload = function () {
+            window.requestAnimationFrame(function () {
+                var hero_heading = document.querySelectorAll(
+                    "[gsap-anim-hero-heading]"
+                );
+                var hero_text = document.querySelectorAll("[gsap-anim-hero-text]");
+                var hero_btn = document.querySelectorAll("[gsap-anim-hero-btn]");
+                var hero_bg = document.querySelectorAll("[gsap-anim-hero-bg]");
+                var hero_nav = document.querySelectorAll("[gsap-anim-nav]");
+                var hero_video = document.querySelectorAll("[gsap-anim-hero-video]");
+
+                var title_splitText = new SplitType(hero_heading, {type: "chars"});
+
+
+                // animate the title
+                gsap.from(title_splitText.chars, {
+                    duration: 0.5,
+                    y: "60%",
+                    opacity: 0,
+                    rotationX: -90,
+                    ease: "power1.inOut",
+                    stagger: {amount: 0.7, from: "0"},
+                });
+
+                // animate the text
+                gsap.fromTo(
+                    hero_text,
+                    {opacity: 0},
+                    {duration: 1, opacity: 1, delay: 0.5}
+                );
+
+                // animate the button
+                gsap.fromTo(
+                    hero_btn,
+                    {opacity: 0},
+                    {duration: 1, opacity: 1, delay: 1}
+                );
+
+                // animate video
+                gsap.fromTo(
+                    hero_video,
+                    {opacity: 0},
+                    {duration: 1, opacity: 1, delay: 3.5}
+                );
+
+                gsap.set(".prev-cursor-arr", {opacity: 0});
+                gsap.set(".next-cursor-arr", {opacity: 0});
+            });
+        };
+    });
+</script>
+
+<!-- Title animation -->
+<script>
+    var elements = gsap.utils.toArray("[gsap-anim-letter]");
+    elements.forEach(function (element) {
+        // get the scrollfade attribute value
+        var scrollfade = element.getAttribute("gsap-anim-letter");
+        var splitText = new SplitType(element, {type: "chars"});
+
+        let letter_tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                end: "bottom top",
+                toggleActions: "play none none none",
+            },
+        });
+
+        let letter_t2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top bottom",
+                end: "bottom top",
+                toggleActions: "play none none none",
+            },
+        });
+
+        if (scrollfade == "txtstragger") {
+            letter_tl.from(splitText.chars, {
+                duration: 0.5,
+                y: "60%",
+                opacity: 0,
+                rotationX: -90,
+                ease: "power1.inOut",
+                stagger: {amount: 0.7, from: "0"},
+            });
+        } else if (scrollfade == "fade") {
+            letter_t2.from(splitText.chars, {
+                duration: 0.3,
+                opacity: 0,
+                ease: "power3.inOut",
+                stagger: {amount: 0.7, from: "0"},
+            });
+        }
+    });
+</script>
+
+<!-- Clients Logo Animation -->
+<script>
+    var clientslogo_elements = gsap.utils.toArray("[gsap-anim-clientlogo]");
+
+    clientslogo_elements.forEach(function (element) {
+        //gsap.set(element, { opacity: 0 });
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                end: "bottom top",
+                toggleActions: "play none play none",
+            },
+        });
+
+        tl.fromTo(element, {opacity: 0}, {duration: 1, opacity: 1});
+    });
+
+    //ScrollTrigger.batch("[gsap-anim-clientlogo]", {
+    //onEnter: batch => gsap.to(batch, {autoAlpha: 1, stagger: 0.3}),
+    //});
+</script>
+
+<!-- Fade up animation -->
+<script>
+    var fadeup_elements = gsap.utils.toArray("[gsap-anim-fadeup]");
+
+    fadeup_elements.forEach(function (element) {
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                end: "bottom top",
+                toggleActions: "play none play none",
+            },
+        });
+
+        tl.fromTo(
+            element,
+            {opacity: 0, y: "100px"},
+            {duration: 1, opacity: 1, y: "0px"}
+        );
+    });
+</script>
+
+<!-- Steps Animation -->
+<script>
+    var steps_elements = gsap.utils.toArray("[gsap-anim-step]");
+
+    steps_elements.forEach(function (element) {
+        gsap.set(element, {opacity: 0});
+    });
+
+    ScrollTrigger.batch("[gsap-anim-step]", {
+        onEnter: (batch) => gsap.to(batch, {autoAlpha: 1, stagger: 0.3}),
+    });
+</script>
+
+<!-- Testimonial animation -->
+<script>
+    var testimonial_elements = gsap.utils.toArray("[gsap-anim-fade]");
+    testimonial_elements.forEach(function (element) {
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                end: "bottom top",
+                toggleActions: "play none play none",
+            },
+        });
+
+        tl.fromTo(
+            element,
+            {x: "200px", opacity: 0},
+            {duration: 1, x: "0px", opacity: 1}
+        );
+    });
+</script>
+
+<!-- Capability animation -->
+<script>
+    var capability_elements = gsap.utils.toArray("[gsap-anim-capability]");
+
+    capability_elements.forEach(function (element) {
+        var scrollfade = element.getAttribute("gsap-anim-capability");
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "top bottom",
+                end: "bottom top",
+                toggleActions: "play none play none",
+            },
+        });
+
+        if (scrollfade == "title") {
+            tl.fromTo(element, {scale: 1.2}, {scale: 1, duration: 1});
+        } else if (scrollfade == "text") {
+            tl.fromTo(element, {opacity: 0}, {opacity: 1, duration: 1});
+        }
+    });
+</script>
+
+
+<script src="/asset/npm/@splidejs/splide@3.2.2/dist/js/splide.min.js" type="text/javascript"></script>
+<script>
+    var splide = new Splide(".splide");
+    var bar = splide.root.querySelector(".my-slider-progress-bar");
+
+    splide.on("mounted move", function () {
+        var end = splide.Components.Controller.getEnd() + 1;
+        bar.style.width = String((100 * (splide.index + 1)) / end) + "%";
+    });
+
+    splide.mount();
+
+    // Capability progressbar
+    var capacity_splide = new Splide(".capacity_slider");
+    var capacity_bar = capacity_splide.root.querySelector(
+        ".capa-slider-progress-bar"
+    );
+
+    capacity_splide.on("mounted move", function () {
+        var end = capacity_splide.Components.Controller.getEnd() + 1;
+        capacity_bar.style.width =
+            String((100 * (capacity_splide.index + 1)) / end) + "%";
+    });
+
+    capacity_splide.mount();
+
+    function slider() {
+        let splides = $(".slider, .capacity_slider, .mobile_process_slider");
+        for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+            new Splide(splides[i], {
+                type: "slide",
+                direction: "horizontal",
+                slidesPerView: "auto",
+                keyboard: true,
+                freeMode: true,
+                centeredSlides: true,
+                mousewheel: true,
+                breakpoints: {
+                    991: {slidesPerView: 3},
+                    480: {slidesPerView: 3},
+                    768: {slidesPerView: 3},
+                },
+                speed: 300,
+            }).mount();
+        }
+    }
+
+    slider();
+
+    function testimonial_splide() {
+        let splides = $(".testimonial_splide");
+        for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+            new Splide(splides[i], {
+                type: "slide",
+                direction: "horizontal",
+                slidesPerView: "auto",
+                keyboard: true,
+                freeMode: true,
+                centeredSlides: true,
+                mousewheel: true,
+                breakpoints: {
+                    991: {slidesPerView: 2},
+                    480: {slidesPerView: 2},
+                    768: {slidesPerView: 2},
+                },
+                speed: 300,
+            }).mount();
+        }
+    }
+
+    testimonial_splide();
+</script>
+
+<!-- Scroll to top -->
+<script>
+    $("#scroll-top-top").click(function () {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    });
+</script>
+
+<!-- Cursor hover animation -->
+<script>
+    var scaleElement = document.querySelector('.cursor');
+    var scaleProperties = {
+        scale: 1.2,
+        duration: 0.3,
+        ease: 'power2.out'
+    };
+
+    $("a, .splide__arrow, .scroll_up_block").mouseenter(function () {
+        gsap.to(scaleElement, {scale: 2, opacity: 0.4, duration: 0.5});
+    });
+
+    $("a, .splide__arrow, .scroll_up_block").mouseleave(function () {
+        gsap.to(scaleElement, {scale: 1, opacity: 1, duration: 0.5});
+    });
+</script>
+
+<script>
+    function slider() {
+        let splides = $(".service_slider, .mobile_process_slider");
+        for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+            new Splide(splides[i], {
+                type: "slide",
+                direction: "horizontal",
+                slidesPerView: "auto",
+                keyboard: true,
+                freeMode: true,
+                centeredSlides: true,
+                mousewheel: true,
+                breakpoints: {
+                    991: {slidesPerView: 3},
+                    480: {slidesPerView: 3},
+                    768: {slidesPerView: 3},
+                },
+                speed: 300,
+            }).mount();
+        }
+    }
+
+    slider();
+
+    function testimonial_splide() {
+        let splides = $(".testimonial_splide");
+        for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+            new Splide(splides[i], {
+                type: "slide",
+                direction: "horizontal",
+                slidesPerView: "auto",
+                keyboard: true,
+                freeMode: true,
+                centeredSlides: true,
+                mousewheel: true,
+                breakpoints: {
+                    991: {slidesPerView: 3},
+                    480: {slidesPerView: 3},
+                    768: {slidesPerView: 3},
+                },
+                speed: 300,
+            }).mount();
+        }
+    }
+
+    testimonial_splide();
+
+    // All service gallery slider
+    var splide1 = new Splide(".gallery_service-1");
+    var bar1 = splide1.root.querySelector(".gallery_progress_bar-1");
+    // Update the bar width:
+    splide1.on("mounted move", function () {
+        var end = splide1.Components.Controller.getEnd() + 1;
+        bar1.style.width = String((100 * (splide1.index + 1)) / end) + "%";
+    });
+    splide1.mount();
+
+    var splide2 = new Splide(".gallery_service-2");
+    var bar2 = splide2.root.querySelector(".gallery_progress_bar-2");
+
+    splide2.on("mounted move", function () {
+        var end = splide2.Components.Controller.getEnd() + 1;
+        bar2.style.width = String((100 * (splide2.index + 1)) / end) + "%";
+    });
+    splide2.mount();
+
+    var splide3 = new Splide(".gallery_service-3");
+    var bar3 = splide3.root.querySelector(".gallery_progress_bar-3");
+
+    splide3.on("mounted move", function () {
+        var end = splide3.Components.Controller.getEnd() + 1;
+        bar3.style.width = String((100 * (splide3.index + 1)) / end) + "%";
+    });
+    splide3.mount();
+
+    var splide4 = new Splide(".gallery_service-4");
+    var bar4 = splide4.root.querySelector(".gallery_progress_bar-4");
+
+    splide4.on("mounted move", function () {
+        var end = splide4.Components.Controller.getEnd() + 1;
+        bar4.style.width = String((100 * (splide4.index + 1)) / end) + "%";
+    });
+    splide4.mount();
+
+    var splide5 = new Splide(".gallery_service-5");
+    var bar5 = splide5.root.querySelector(".gallery_progress_bar-5");
+
+    splide5.on("mounted move", function () {
+        var end = splide5.Components.Controller.getEnd() + 1;
+        bar5.style.width = String((100 * (splide5.index + 1)) / end) + "%";
+    });
+    splide5.mount();
+
+    function slider1() {
+        let splides = $(
+            ".slider-1, .slider-2, .slider-3, .slider-4, .slider-5"
+        );
+        for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+            new Splide(splides[i], {
+                type: "slide",
+                direction: "horizontal",
+                slidesPerView: "auto",
+                keyboard: true,
+                freeMode: true,
+                centeredSlides: true,
+                mousewheel: true,
+                breakpoints: {
+                    991: {slidesPerView: 3},
+                    480: {slidesPerView: 3},
+                    768: {slidesPerView: 3},
+                },
+                speed: 300,
+            }).mount();
+        }
+    }
+
+    slider1();
+</script>

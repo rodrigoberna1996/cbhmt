@@ -1,0 +1,28 @@
+.section_company_images {
+    cursor: move;
+}
+.slider .splide__arrows,
+.slider .splide__pagination {
+    display: none;
+}
+
+.my-slider-progress-bar {
+    transition: width 400ms ease;
+    width: 0;
+}
+
+.section_company_images .slider .splide__slide {
+    width: 40% !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .section_company_images .slider .splide__slide {
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .section_company_images .slider .splide__slide {
+        width: 90% !important;
+    }
+}

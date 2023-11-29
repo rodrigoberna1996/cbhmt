@@ -1,0 +1,13 @@
+.language_dropdown_list {
+    background-color: #ffffff !important;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.language_dropdown_link {
+    color: rgba(21, 21, 21, .6) !important;
+}
+
+.language_dropdown_link:hover {
+    color: #b52437 !important;
+}
