@@ -1,75 +1,204 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import Logo from "../../assets/img/logo.png";
-import "../../styles/components/navbar.css"
+import "../../styles/components/navbar.css";
 ---
 
 <div gsap-anim-nav="" class="nav-bar">
-    <div class="nav_grid_wrapper">
-        <div id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f6-b66b54f4" class="nav_grid">
-            <a id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f7-b66b54f4" href="/" aria-current="page"
-               class="logo_link w-inline-block w--current">
-                <Image src={Logo} alt="logo-cbhmt" class="logo_link_img" loading="lazy"/>
+  <div class="nav_grid_wrapper">
+    <div
+      id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f6-b66b54f4"
+      class="nav_grid"
+    >
+      <a
+        id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f7-b66b54f4"
+        href="/"
+        aria-current="page"
+        class="logo_link w-inline-block w--current"
+      >
+        <Image
+          src={Logo}
+          alt="logo-cbhmt"
+          class="logo_link_img"
+          loading="lazy"
+        />
+      </a>
+      <div
+        id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f9-b66b54f4"
+        class="nav_links_block"
+      >
+        <a href="/about" class="nav_link" style="padding-right: 40px"
+          >Acerca de</a
+        >
+        <div
+          data-hover="false"
+          data-delay="0"
+          class="language_dropdown w-dropdown"
+        >
+          <div class="language_dropdown_toggle w-dropdown-toggle">
+            <div class="w-icon-dropdown-toggle"></div>
+            <div>Servicios</div>
+          </div>
+          <nav class="language_dropdown_list w-dropdown-list">
+            <a
+              href="/services#mechanical-design"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Diseño mecánico
             </a>
-            <div id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f9-b66b54f4" class="nav_links_block">
-                <a href="/about" class="nav_link" style="padding-right: 40px">Acerca de</a>
-                <div data-hover="false" data-delay="0" class="language_dropdown w-dropdown">
-                    <div class="language_dropdown_toggle w-dropdown-toggle">
-                        <div class="w-icon-dropdown-toggle"></div>
-                        <div>Servicios</div>
-                    </div>
-                    <nav class="language_dropdown_list w-dropdown-list">
-                        <a href="/services#cnc-service" class="language_dropdown_link w-dropdown-link">
-                            Mecanizado CNC
-                        </a>
-                        <a href="/services#calipers" class="language_dropdown_link w-dropdown-link">
-                            Calibradores
-                        </a>
-                        <a href="/services#tooling" class="language_dropdown_link w-dropdown-link">
-                            Herramentales
-                        </a>
-                        <a href="/services#vaccum-casting" class="language_dropdown_link w-dropdown-link">
-                            Fundición al vacío
-                        </a>
-                    </nav>
-                </div>
-                <div data-hover="false" data-delay="0" class="language_dropdown w-dropdown">
-                    <div class="language_dropdown_toggle w-dropdown-toggle">
-                        <div class="w-icon-dropdown-toggle"></div>
-                        <div>Productos</div>
-                    </div>
-                    <nav class="language_dropdown_list w-dropdown-list">
-                        <a href="/products#cnc-service" class="language_dropdown_link w-dropdown-link">
-                            Mecanizado CNC
-                        </a>
-                        <a href="/products#calipers" class="language_dropdown_link w-dropdown-link">
-                            Calibradores
-                        </a>
-                        <a href="/products#tooling" class="language_dropdown_link w-dropdown-link">
-                            Herramentales
-                        </a>
-                        <a href="/products#vaccum-casting" class="language_dropdown_link w-dropdown-link">
-                            Fundición al vacío
-                        </a>
-                    </nav>
-                </div>
-                <a href="/contact" class="nav_link">Contacto</a>
-            </div>
-            <div id="w-node-_3f571d52-b65f-917c-24da-08674beefd9e-b66b54f4" class="mobile_right_block">
-                <div id="w-node-e63e5f88-269c-02fc-ffde-393cb66b5502-b66b54f4" class="mobile_toggle_block">
-                    <img src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/6481c033468140038c23d232_menu%20toggle%20icon.svg"
-                         loading="lazy" alt="" class="mobile_menu_icon menu-dots"/>
-                    <img src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/647f3167116836b758c81807_close_FILL0_wght400_GRAD0_opsz48.svg"
-                         loading="lazy" alt="" class="mobile_menu_icon menu-close"/>
-                </div>
-            </div>
+            <a
+              href="/services#cengineering-changes"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Cambios de ingeniería
+            </a>
+            <a
+              href="/services#integration-services"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Integración
+            </a>
+            <a
+              href="/services#serial-machining"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Maquinado en serie
+            </a>
+            <a
+              href="/services#parts-and-repairs-machining"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Maquinado de piezas y refacciones mecánicas
+            </a>
+            <a
+              href="/services#plc-robot-programming"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Programación de PLC y robots (Fanuc, Yaskawa)
+            </a>
+            <a
+              href="/services#faro-arm-measurement"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Medición con brazo Faro
+            </a>
+            <a
+              href="/services#accredited-measurement"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Medición con organismo acreditado
+            </a>
+            <a
+              href="/services#tooling-maintenance"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Mantenimientos industriales de herramentales y celdas de soldadura
+            </a>
+            <a
+              href="/services#naams-calibration"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Calibración de herramentales con accesorios de ajustes NAAMS
+            </a>
+          </nav>
         </div>
+        <div
+          data-hover="false"
+          data-delay="0"
+          class="language_dropdown w-dropdown"
+        >
+          <div class="language_dropdown_toggle w-dropdown-toggle">
+            <div class="w-icon-dropdown-toggle"></div>
+            <div>Productos</div>
+          </div>
+          <nav class="language_dropdown_list w-dropdown-list">
+            <a
+              href="/products#checking-fixture"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Checking fixture
+            </a>
+            <a
+              href="/products#welding-fixture"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Welding fixture
+            </a>
+            <a
+              href="/products#holding-fixture"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Holding fixture
+            </a>
+            <a
+              href="/products#assembly-fixture"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Assembly fixture
+            </a>
+            <a
+              href="/products#poka-yoke"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Poka-Yoke
+            </a>
+            <a
+              href="/products#mechanical-components"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Complementos mecánicos
+            </a>
+            <a
+              href="/products#industrial-metalwork"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Pailería industrial
+            </a>
+            <a
+              href="/products#special-equipment-sales"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Venta de equipos especiales
+            </a>
+            <a
+              href="/products#automated-handling-systems"
+              class="language_dropdown_link w-dropdown-link"
+            >
+              Sistemas automatizados para manejo, transporte e inspección de
+              materiales
+            </a>
+          </nav>
+        </div>
+        <a href="/contact" class="nav_link">Contacto</a>
+      </div>
+      <div
+        id="w-node-_3f571d52-b65f-917c-24da-08674beefd9e-b66b54f4"
+        class="mobile_right_block"
+      >
+        <div
+          id="w-node-e63e5f88-269c-02fc-ffde-393cb66b5502-b66b54f4"
+          class="mobile_toggle_block"
+        >
+          <img
+            src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/6481c033468140038c23d232_menu%20toggle%20icon.svg"
+            loading="lazy"
+            alt=""
+            class="mobile_menu_icon menu-dots"
+          />
+          <img
+            src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/647f3167116836b758c81807_close_FILL0_wght400_GRAD0_opsz48.svg"
+            loading="lazy"
+            alt=""
+            class="mobile_menu_icon menu-close"
+          />
+        </div>
+      </div>
     </div>
-    <div class="mobile_menu_wrapper">
-        <a href="/about" class="mobile_link_text link1">Acerca de</a>
-        <a href="/services" class="mobile_link_text link1">Servicios</a>
-        <a href="/products" class="mobile_link_text link1">Productos</a>
-        <a href="/contact" class="mobile_link_text link4">Contacto</a>
-    </div>
+  </div>
+  <div class="mobile_menu_wrapper">
+    <a href="/about" class="mobile_link_text link1">Acerca de</a>
+    <a href="/services" class="mobile_link_text link1">Servicios</a>
+    <a href="/products" class="mobile_link_text link1">Productos</a>
+    <a href="/contact" class="mobile_link_text link4">Contacto</a>
+  </div>
 </div>
-
