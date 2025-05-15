@@ -3618,7 +3618,7 @@ p {
     grid-row-gap: 32px;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 10vw;
+    padding-top: 1vw;
     padding-bottom: 10.417vw;
     display: flex;
     position: -webkit-sticky;
@@ -3645,6 +3645,11 @@ p {
     margin-bottom: 10.417vw;
 }
 
+.service_detail_block {
+    margin-bottom: 20vw;
+}
+
+
 .service_detail_grid {
     grid-column-gap: 6.25vw;
     grid-row-gap: 16px;
@@ -3652,6 +3657,7 @@ p {
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 1fr;
     display: grid;
+    margin-bottom: 25vw;
 }
 
 .service_image_block-one {
@@ -4335,7 +4341,6 @@ p {
 .language_dropdown_list {
     grid-column-gap: 0px;
     grid-row-gap: 12px;
-    background-color: rgba(0, 0, 0, 0);
     flex-direction: column;
     justify-content: center;
     align-items: center;
