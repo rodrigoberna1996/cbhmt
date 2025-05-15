@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../../src/styles/pages/contact.css";
+import CountrySelector from "../components/contact/CountrySelector.astro";
+import InterestSelector from "../components/contact/InterestSelector.astro";
 ---
 
 <Layout title="Servicios">
@@ -58,7 +60,7 @@ import "../../src/styles/pages/contact.css";
               <div class="word" style="display: inline-block;">
                 <div
                   class="char"
-                  style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%); font-size:extra-large"
+                  style="display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%); font-size:xxx-large"
                 >
                   Estamos aquí para ayudar
                 </div>
@@ -81,37 +83,62 @@ import "../../src/styles/pages/contact.css";
                 name="access_key"
                 value="95880d49-07b0-4900-ae48-ae48d06098bb"
               />
-              <input
-                type="checkbox"
-                class="hidden"
-                style="display:none"
-                name="botcheck"
-              />
+              <label>
+                <input
+                  type="checkbox"
+                  class="hidden"
+                  style="display:none"
+                  name="botcheck"
+                />
+              </label>
               <input type="hidden" name="from_name" value="CBH WEBSITE">
               <input type="hidden" name="subject" value="Cliente quiere contactar contigo"/>
+              <!-- Input Name -->
               <div class="mb-5">
-                <input
-                  type="text"
-                  placeholder="Nombre completo"
-                  required
-                  class="contact_input"
-                  name="name"
-                />
+                <label>
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    required
+                    class="contact_input"
+                    name="first_name"
+                  />
+                </label>
                 <div
                   class="empty-feedback invalid-feedback text-red-400 text-sm mt-1"
                 >
-                  Proporcione su nombre completo.
+                  Proporcione su nombre.
                 </div>
               </div>
+              <!-- Input Last Name -->
               <div class="mb-5">
-                <input
-                  id="email_address"
-                  type="email"
-                  placeholder="Dirección de correo electrónico"
-                  name="email"
-                  required
-                  class="contact_input"
-                />
+                <label>
+                  <input
+                      type="text"
+                      placeholder="Apellido"
+                      required
+                      class="contact_input"
+                      name="last_name"
+                  />
+                </label>
+                <div
+                    class="empty-feedback invalid-feedback text-red-400 text-sm mt-1"
+                >
+                  Proporcione tu apellido.
+                </div>
+              </div>
+              <!-- Input Mail-->
+              <div class="mb-5">
+                <label>
+                  <input
+                      id="email_address"
+                      type="email"
+                      placeholder="Correo electrónico"
+                      name="email"
+                      required
+                      class="contact_input"
+                  />
+                </label>
                 <div class="empty-feedback text-red-400 text-sm mt-1">
                   Proporcione su dirección de correo electrónico.
                 </div>
@@ -120,13 +147,40 @@ import "../../src/styles/pages/contact.css";
                   válida.
                 </div>
               </div>
+              <!-- Component Select Country  -->
+              <CountrySelector/>
+              <!-- Input Company -->
+              <div class="mb-5">
+                <label>
+                  <input
+                      id="company_name"
+                      type="text"
+                      placeholder="Compañía"
+                      name="company"
+                      required
+                      class="contact_input"
+                  />
+                </label>
+                <div class="empty-feedback text-red-400 text-sm mt-1">
+                  Proporcione su dirección de correo electrónico.
+                </div>
+                <div class="invalid-feedback text-red-400 text-sm mt-1">
+                  Por favor, introduzca su dirección de correo electrónico
+                  válida.
+                </div>
+              </div>
+              <!-- Input interested-->
+              <InterestSelector/>
+              <!-- Input Message -->
               <div class="mb-3">
+                <label>
                 <textarea
                   name="message"
                   required
-                  placeholder="Tu mensaje"
+                  placeholder="¿Quieres añadir contexto a tu consulta? Añade una nota."
                   style="height: 10rem"
-                  class="contact_input"></textarea>
+                  class="contact_input"/>
+                </label>
                 <div
                   class="empty-feedback invalid-feedback text-red-400 text-sm mt-1"
                 >
@@ -165,7 +219,8 @@ import "../../src/styles/pages/contact.css";
                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
                       >
                         <div class="button_text">Enviar</div>
-                      </div><div
+                      </div>
+                      <div
                         class="button_text_block bottom"
                         style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
                       >
@@ -189,7 +244,7 @@ import "../../src/styles/pages/contact.css";
   </div>
 </Layout>
 
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script is:inline src="https://web3forms.com/client/script.js" async defer/>
 <style>
   .invalid-feedback,
   .empty-feedback {
@@ -246,7 +301,7 @@ import "../../src/styles/pages/contact.css";
     })
       .then(async (response) => {
         let json = await response.json();
-        if (response.status == 200) {
+        if (response.status === 200) {
           result.classList.add("text-green-500");
           result.innerHTML = json.message;
         } else {

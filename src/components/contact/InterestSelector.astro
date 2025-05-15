@@ -1,0 +1,32 @@
+---
+import items from '../../assets/data/productos_servicios.json';
+
+const options = [
+    {group: 'Productos', values: items.productos},
+    {group: 'Servicios', values: items.servicios}
+];
+---
+
+<div class="mb-5">
+    <label>
+        <select
+                id="interested"
+                name="interested"
+                required
+                class="contact_input"
+        >
+            <option value="" disabled selected>Estoy interesado en...</option>
+            {
+                options.map(({group, values}) => (
+                        <optgroup label={group}>
+                            {
+                                values.map((item) => (
+                                        <option value={item}>{item}</option>
+                                ))
+                            }
+                        </optgroup>
+                ))
+            }
+        </select>
+    </label>
+</div>

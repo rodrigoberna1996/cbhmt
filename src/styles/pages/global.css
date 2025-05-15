@@ -2406,7 +2406,7 @@ p {
 .hero_button.proceed_btn {
     grid-column-gap: 1.667vw;
     margin-top: 0;
-    display: flex;
+    #display: flex;
 }
 
 .button_text {

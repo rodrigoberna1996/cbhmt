@@ -1,0 +1,25 @@
+{
+  "productos": [
+    "Checking fixture",
+    "Welding fixture",
+    "Holding fixture",
+    "Assembly fixture",
+    "Poka-Yoke",
+    "Complementos mecánicos industriales",
+    "Pailería industrial",
+    "Venta de equipos especiales"
+  ],
+  "servicios": [
+    "Diseño mecánico",
+    "Cambios de ingeniería",
+    "Integración",
+    "Maquinado en serie",
+    "Maquinado de piezas y refacciones mecánicas",
+    "Sistemas automatizados para manejo, transporte e inspección de materiales",
+    "Programación de PLC y robots (Fanuc, Yaskawa)",
+    "Medición con brazo Faro",
+    "Medición con organismo acreditado",
+    "Mantenimientos industriales de herramentales y celdas de soldadura",
+    "Calibración de herramentales con accesorios de ajustes NAAMS"
+  ]
+}

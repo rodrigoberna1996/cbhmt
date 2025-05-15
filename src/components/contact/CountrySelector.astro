@@ -1,0 +1,19 @@
+---
+import countries from '../../assets/data/countries.json'
+---
+
+<div class="mb-5">
+    <label>
+        <select
+                id="country"
+                name="country"
+                required
+                class="contact_input"
+        >
+            <option value="" disabled selected>País</option>
+            {countries.map((country) => (
+                    <option value={country.code}>{country.name}</option>
+            ))}
+        </select>
+    </label>
+</div>
