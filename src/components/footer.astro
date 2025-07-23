@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../assets/img/logo.svg";
+import Logo from "../../public/img/logo.svg";
+import FacebookIcon from "../../public/img/fb.svg";
+import InstagramIcon from "../../public/img/ins.svg";
 ---
 
 <div class="footer">
@@ -10,20 +12,30 @@ import Logo from "../assets/img/logo.svg";
       id="w-node-_2bdf37a7-5113-22b5-c718-f406080443bb-080443b9"
       class="footer_block"
     >
-      <a
-        id="w-node-_2bdf37a7-5113-22b5-c718-f406080443bc-080443b9"
-        aria-current="page"
-        class="footer_logo w-inline-block w--current"
-      >
-        <Image
-          src={Logo}
-          alt="logo-cbhmt"
-          class="logo_link_img"
-          loading="lazy"
-          width={120}
-          height={80}
-        />
-      </a>
+      <div class="footer_logo_container">
+        <a
+          id="w-node-_2bdf37a7-5113-22b5-c718-f406080443bc-080443b9"
+          aria-current="page"
+          class="footer_logo w-inline-block w--current"
+        >
+          <Image
+            src={Logo}
+            alt="logo-cbhmt"
+            class="logo_link_img"
+            loading="lazy"
+            width={120}
+            height={80}
+          />
+        </a>
+        <div class="social_media_block">
+          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
+            <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
+          </a>
+          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" class="social_media_circle">
+            <Image src={FacebookIcon} alt="facebook" loading="lazy" width={8} height={16} />
+          </a>
+        </div>
+      </div>
       <div
         id="w-node-_2bdf37a7-5113-22b5-c718-f406080443be-080443b9"
         class="footer_link_block"

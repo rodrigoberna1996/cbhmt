@@ -2,12 +2,13 @@
     position: relative;
   }
   
-  .language_dropdown_toggle {
-    color: #fff;
+.language_dropdown_toggle {
+    color: #151515;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 48px;
     cursor: pointer;
+    transition: color .5s;
   }
   
   .language_dropdown_toggle.black {
@@ -16,17 +17,18 @@
   
   .language_dropdown_list {
     background-color: #ffffff !important;
-    border-radius: 5px;
-    padding: 1rem;
+    border-radius: 8px;
+    padding: 0.5rem 0;
     max-height: 500px;
     overflow-y: auto;
     overflow-x: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 999;
     position: absolute;
     right: 0;
     top: 100%;
     margin-top: 12px;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -37,22 +39,24 @@
   }
   
   .language_dropdown_link {
-    color: rgba(21, 21, 21, 0.6) !important;
+    color: #151515 !important;
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     width: 100%;
-  
+    transition: background-color .3s, color .3s;
+
     /* Control de desbordes */
     word-break: break-word;
     white-space: normal;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
   }
-  
+
   .language_dropdown_link:hover,
   .language_dropdown_link.current-lang {
     color: #b52437;
+    background-color: #f3f3f3;
   }
   
   .language_dropdown_link.black {
@@ -68,11 +72,11 @@
       padding: 0.5rem 1rem;
       background-color: transparent;
     }
-  
+
     .language_dropdown_link {
       padding: 0.5rem 0;
       width: 100%;
       color: #151515;
+      transition: background-color .3s, color .3s;
     }
   }
-  

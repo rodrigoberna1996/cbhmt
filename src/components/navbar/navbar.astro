@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../../assets/img/logo.png";
+import Logo from "../../../public/img/logo.png";
+import FacebookIcon from "../../../public/img/fb.svg";
+import InstagramIcon from "../../../public/img/ins.svg";
 import "../../styles/components/navbar.css";
 ---
 
@@ -10,19 +12,29 @@ import "../../styles/components/navbar.css";
       id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f6-b66b54f4"
       class="nav_grid"
     >
-      <a
-        id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f7-b66b54f4"
-        href="/"
-        aria-current="page"
-        class="logo_link w-inline-block w--current"
-      >
-        <Image
-          src={Logo}
-          alt="logo-cbhmt"
-          class="logo_link_img"
-          loading="lazy"
-        />
-      </a>
+      <div class="nav_logo_container">
+        <a
+          id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f7-b66b54f4"
+          href="/"
+          aria-current="page"
+          class="logo_link w-inline-block w--current"
+        >
+          <Image
+            src={Logo}
+            alt="logo-cbhmt"
+            class="logo_link_img"
+            loading="lazy"
+          />
+        </a>
+        <div class="navbar_social_block">
+          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
+            <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
+          </a>
+          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" class="social_media_circle">
+            <Image src={FacebookIcon} alt="facebook" loading="lazy" width={8} height={16} />
+          </a>
+        </div>
+      </div>
       <div
         id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f9-b66b54f4"
         class="nav_links_block"
