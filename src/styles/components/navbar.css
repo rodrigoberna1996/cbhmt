@@ -2,12 +2,13 @@
     position: relative;
   }
   
-  .language_dropdown_toggle {
-    color: #fff;
+.language_dropdown_toggle {
+    color: #151515;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 48px;
     cursor: pointer;
+    transition: color .5s;
   }
   
   .language_dropdown_toggle.black {
@@ -36,12 +37,13 @@
     white-space: normal;
   }
   
-  .language_dropdown_link {
-    color: rgba(21, 21, 21, 0.6) !important;
+.language_dropdown_link {
+    color: #151515 !important;
     margin: 0;
     padding: 0.5rem 0;
     text-decoration: none;
     width: 100%;
+    transition: color .5s;
   
     /* Control de desbordes */
     word-break: break-word;
@@ -68,11 +70,11 @@
       padding: 0.5rem 1rem;
       background-color: transparent;
     }
-  
+
     .language_dropdown_link {
       padding: 0.5rem 0;
       width: 100%;
       color: #151515;
+      transition: color .5s;
     }
   }
-  
