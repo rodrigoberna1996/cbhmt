@@ -2288,6 +2288,7 @@ p {
     bottom: auto;
     left: 0%;
     right: 0%;
+    background-color: #ffffff;
 }
 
 .nav-bar.upload_nav_bar {
@@ -2313,6 +2314,17 @@ p {
     display: grid;
 }
 
+.nav_logo_container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar_social_block {
+    display: flex;
+    gap: 12px;
+}
+
 .section_hero {
     height: 100vh;
     background-image: url("../img/hero/home.png"), linear-gradient(#151515, #151515);
@@ -2328,7 +2340,7 @@ p {
 }
 
 .nav_link {
-    color: #fff;
+    color: #151515;
     padding-left: 48px;
     font-size: 18px;
     text-decoration: none;
@@ -5643,6 +5655,7 @@ p {
         z-index: 999;
         padding-top: 20px;
         padding-bottom: 20px;
+        background-color: #ffffff;
     }
 
     .nav_grid_wrapper {
@@ -5653,6 +5666,17 @@ p {
 
     .nav_grid {
         grid-template-columns: .5fr 1fr;
+    }
+
+    .nav_logo_container {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .navbar_social_block {
+        display: flex;
+        gap: 12px;
     }
 
     .nav_links_block {
