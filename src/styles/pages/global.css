@@ -3686,6 +3686,21 @@ p {
     background-position: 50%;
     background-repeat: no-repeat;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.service_image_block {
+    width: 100%;
+    height: 35.938vw;
+    overflow: hidden;
+}
+
+.service_image_block img,
+.service_image_block-one img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .service_title {
@@ -3788,10 +3803,13 @@ p {
 .service_image_block-three {
     width: 100%;
     height: 35.938vw;
-    background-image: url("../img/services/calibradores.jpeg");
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    overflow: hidden;
+}
+
+.service_image_block-three img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -6208,8 +6226,10 @@ p {
         grid-column-gap: 30px;
     }
 
-    .service_image_block-one {
+    .service_image_block-one,
+    .service_image_block {
         height: 350px;
+        overflow: hidden;
     }
 
     .service_title {
@@ -6266,6 +6286,10 @@ p {
     .service_image_block-three,
     .service_image_block-four {
         height: 350px;
+    }
+
+    .service_image_block-three {
+        overflow: hidden;
     }
 
     .services_tab_block {
