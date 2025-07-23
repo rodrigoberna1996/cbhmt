@@ -2280,8 +2280,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     position: absolute;
     top: 0%;
@@ -5179,7 +5179,7 @@ p {
 
     .hero_text {
         width: 50%;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .sub_button-text {
