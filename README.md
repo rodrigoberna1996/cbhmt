@@ -36,6 +36,20 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+### Local images
+
+Images stored inside `src/assets` should be imported and rendered with the
+Astro `<Image>` component. This enables image optimization during the build
+process.
+
+```astro
+---
+import { Image } from "astro:assets";
+import logo from "../assets/img/logo.png";
+---
+<Image src={logo} alt="Logo" />
+```
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
