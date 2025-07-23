@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../assets/img/logo.svg";
-import FacebookIcon from "../assets/img/fb.svg";
-import InstagramIcon from "../assets/img/ins.svg";
+import Logo from "../../public/img/logo.svg";
+import FacebookIcon from "../../public/img/fb.svg";
+import InstagramIcon from "../../public/img/ins.svg";
 ---
 
 <div class="footer">
@@ -28,10 +28,10 @@ import InstagramIcon from "../assets/img/ins.svg";
           />
         </a>
         <div class="social_media_block">
-          <a href="https://www.instagram.com" target="_blank" class="social_media_circle">
+          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
             <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
           </a>
-          <a href="https://www.facebook.com" target="_blank" class="social_media_circle">
+          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" class="social_media_circle">
             <Image src={FacebookIcon} alt="facebook" loading="lazy" width={8} height={16} />
           </a>
         </div>
