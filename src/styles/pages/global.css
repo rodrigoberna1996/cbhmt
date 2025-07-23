@@ -4366,19 +4366,25 @@ p {
     align-items: center;
     margin-top: 12px;
     margin-left: 5px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 220px;
 }
 
 .language_dropdown_link {
     color: #151515;
     margin-left: 0;
     margin-right: 0;
-    padding: 0 0 12px;
-    transition: color .5s;
+    padding: 0.5rem 1rem;
+    transition: background-color .3s, color .3s;
 }
 
 .language_dropdown_link:hover,
 .language_dropdown_link.current-lang {
     color:#be5e22;
+    background-color: #f3f3f3;
 }
 
 .language_dropdown_link.black {
