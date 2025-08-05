@@ -2288,7 +2288,7 @@ p {
     bottom: auto;
     left: 0%;
     right: 0%;
-    background-color: #ffffff;
+    background-color: transparent;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -5682,7 +5682,7 @@ p {
         z-index: 999;
         padding-top: 20px;
         padding-bottom: 20px;
-        background-color: #ffffff;
+        background-color: transparent;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
