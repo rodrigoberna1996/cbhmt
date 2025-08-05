@@ -2348,9 +2348,14 @@ p {
     font-size: 18px;
     text-decoration: none;
     transition: color .5s;
+    border-bottom: 2px solid transparent;
 }
 
-.nav_link:hover,
+.nav_link:hover {
+    color:#be5e22;
+    border-bottom-color: red;
+}
+
 .nav_link.w--current {
     color:#be5e22;
 }
