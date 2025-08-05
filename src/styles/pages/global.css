@@ -2275,8 +2275,9 @@ p {
     font-family: Inter, sans-serif;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
-}
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .nav-bar {
     z-index: 2;
@@ -3745,7 +3746,11 @@ p {
     color: rgba(21, 21, 21, .6);
     font-size: 18px;
     line-height: 170%;
-}
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .service-line {
     width: 2px;
@@ -4381,7 +4386,11 @@ p {
 .accordian_content_text,
 .whyus_toggle-content-text {
     overflow: hidden;
-}
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .mobile_service_tab,
 .mobile_process_slider,
