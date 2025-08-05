@@ -2273,7 +2273,11 @@ h2 {
 p {
     margin-bottom: 10px;
     font-family: Inter, sans-serif;
-}
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .nav-bar {
     z-index: 2;
@@ -2288,8 +2292,8 @@ p {
     bottom: auto;
     left: 0%;
     right: 0%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .nav-bar.upload_nav_bar {
@@ -2340,21 +2344,44 @@ p {
     position: relative;
 }
 
+
 .nav_link {
     color: #151515;
-    padding-left: 48px;
+    padding: 0 16px;
     font-size: 18px;
     text-decoration: none;
     transition: color .5s;
+    border-bottom: 2px solid transparent;
 }
 
-.nav_link:hover,
+.nav_link:hover {
+    color:#be5e22;
+    border-bottom-color: red;
+}
+
 .nav_link.w--current {
     color:#be5e22;
 }
 
 .nav_link.black {
     color: #151515;
+}
+
+.nav-bar .w-dropdown-toggle,
+.nav-bar .w-dropdown-link {
+    color: #151515;
+    border-bottom: 2px solid transparent;
+    transition: color .5s;
+}
+
+.nav-bar .w-dropdown-toggle {
+    padding: 0 16px;
+}
+
+.nav-bar .w-dropdown-toggle:hover,
+.nav-bar .w-dropdown-link:hover {
+    color:#be5e22;
+    border-bottom-color: red;
 }
 
 .grid_wrapper {
@@ -3719,7 +3746,11 @@ p {
     color: rgba(21, 21, 21, .6);
     font-size: 18px;
     line-height: 170%;
-}
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .service-line {
     width: 2px;
@@ -4355,7 +4386,11 @@ p {
 .accordian_content_text,
 .whyus_toggle-content-text {
     overflow: hidden;
-}
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .mobile_service_tab,
 .mobile_process_slider,
@@ -4368,12 +4403,18 @@ p {
     color: #151515;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 48px;
+    padding-left: 24px;
     transition: color .5s;
+    border-bottom: 2px solid transparent;
 }
 
 .language_dropdown_toggle.black {
     color: #151515;
+}
+
+.language_dropdown_toggle:hover {
+    color:#be5e22;
+    border-bottom-color: red;
 }
 
 .language_dropdown_list {
@@ -5682,8 +5723,8 @@ p {
         z-index: 999;
         padding-top: 20px;
         padding-bottom: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: transparent;
+        box-shadow: none;
     }
 
     .nav_grid_wrapper {
