@@ -2273,6 +2273,9 @@ h2 {
 p {
     margin-bottom: 10px;
     font-family: Inter, sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .nav-bar {
@@ -2288,7 +2291,7 @@ p {
     bottom: auto;
     left: 0%;
     right: 0%;
-    background-color: #ffffff;
+    background-color: transparent;
     box-shadow: none;
 }
 
@@ -2340,9 +2343,10 @@ p {
     position: relative;
 }
 
+
 .nav_link {
     color: #151515;
-    padding-left: 24px;
+    padding: 0 16px;
     font-size: 18px;
     text-decoration: none;
     transition: color .5s;
@@ -2370,7 +2374,7 @@ p {
 }
 
 .nav-bar .w-dropdown-toggle {
-    padding-left: 24px;
+    padding: 0 16px;
 }
 
 .nav-bar .w-dropdown-toggle:hover,
@@ -5710,8 +5714,8 @@ p {
         z-index: 999;
         padding-top: 20px;
         padding-bottom: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: transparent;
+        box-shadow: none;
     }
 
     .nav_grid_wrapper {

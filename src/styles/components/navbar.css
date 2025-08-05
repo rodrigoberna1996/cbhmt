@@ -4,9 +4,7 @@
   
 .language_dropdown_toggle {
     color: #151515;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 48px;
+    padding: 0 16px;
     cursor: pointer;
     transition: color .5s;
   }
