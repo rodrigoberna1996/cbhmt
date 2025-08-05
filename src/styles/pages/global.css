@@ -2322,12 +2322,13 @@ p {
 .nav_logo_container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 24px;
 }
 
 .navbar_social_block {
     display: flex;
     gap: 12px;
+    margin-left: 8px;
 }
 
 .section_hero {
@@ -2345,6 +2346,7 @@ p {
 }
 
 
+
 .nav_link {
     color: #151515;
     padding: 0 16px;
@@ -2352,11 +2354,12 @@ p {
     text-decoration: none;
     transition: color .5s;
     border-bottom: 2px solid transparent;
+    font-weight: 600;
 }
 
 .nav_link:hover {
-    color:#be5e22;
-    border-bottom-color: red;
+    color: #ff0000;
+    border-bottom-color: #ff0000;
 }
 
 .nav_link.w--current {
@@ -2372,6 +2375,7 @@ p {
     color: #151515;
     border-bottom: 2px solid transparent;
     transition: color .5s;
+    font-weight: 600;
 }
 
 .nav-bar .w-dropdown-toggle {
@@ -2380,8 +2384,8 @@ p {
 
 .nav-bar .w-dropdown-toggle:hover,
 .nav-bar .w-dropdown-link:hover {
-    color:#be5e22;
-    border-bottom-color: red;
+    color: #ff0000;
+    border-bottom-color: #ff0000;
 }
 
 .grid_wrapper {
