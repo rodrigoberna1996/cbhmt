@@ -2325,6 +2325,10 @@ p {
     gap: 24px;
 }
 
+.logo_link {
+    flex-shrink: 0;
+}
+
 .navbar_social_block {
     display: flex;
     gap: 12px;
@@ -2348,7 +2352,7 @@ p {
 
 
 .nav_link {
-    color: #151515;
+    color: #fff;
     padding: 0 16px;
     font-size: 18px;
     text-decoration: none;
@@ -2372,7 +2376,7 @@ p {
 
 .nav-bar .w-dropdown-toggle,
 .nav-bar .w-dropdown-link {
-    color: #151515;
+    color: #fff;
     border-bottom: 2px solid transparent;
     transition: color .5s;
     font-weight: 600;

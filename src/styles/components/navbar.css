@@ -3,7 +3,7 @@
   }
 
 .language_dropdown_toggle.w-dropdown-toggle {
-    color: #151515;
+    color: #fff;
     padding: 0 16px;
     cursor: pointer;
     transition: color .5s;
