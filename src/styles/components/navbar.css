@@ -4,11 +4,11 @@
   
 .language_dropdown_toggle {
     color: #151515;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 48px;
+    padding: 0 16px;
     cursor: pointer;
     transition: color .5s;
+    display: flex;
+    align-items: center;
   }
   
   .language_dropdown_toggle.black {
@@ -36,6 +36,11 @@
     /* Evita desbordes de texto */
     word-break: break-word;
     white-space: normal;
+  }
+
+  .language_dropdown_toggle .w-icon-dropdown-toggle {
+    position: static;
+    margin-left: 4px;
   }
   
   .language_dropdown_link {
