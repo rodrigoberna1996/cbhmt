@@ -2275,8 +2275,9 @@ p {
     font-family: Inter, sans-serif;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
-}
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .nav-bar {
     z-index: 2;
@@ -3747,8 +3748,9 @@ p {
     line-height: 170%;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
-}
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .service-line {
     width: 2px;
@@ -4386,8 +4388,9 @@ p {
     overflow: hidden;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
-}
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
 
 .mobile_service_tab,
 .mobile_process_slider,

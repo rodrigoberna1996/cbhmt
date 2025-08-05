@@ -1,8 +1,8 @@
 .language_dropdown {
     position: relative;
   }
-  
-.language_dropdown_toggle {
+
+.language_dropdown_toggle.w-dropdown-toggle {
     color: #151515;
     padding: 0 16px;
     cursor: pointer;
@@ -38,9 +38,10 @@
     white-space: normal;
   }
 
-  .language_dropdown_toggle .w-icon-dropdown-toggle {
+.language_dropdown_toggle .w-icon-dropdown-toggle {
     position: static;
     margin-left: 4px;
+    flex-shrink: 0;
   }
   
   .language_dropdown_link {
