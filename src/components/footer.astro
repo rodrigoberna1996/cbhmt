@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Logo from "../../public/img/logo.svg";
 import FacebookIcon from "../../public/img/fb.svg";
 import InstagramIcon from "../../public/img/ins.svg";
+import LinkedInIcon from "../../public/img/linkedin.svg";
 ---
 
 <div class="footer">
@@ -28,6 +29,9 @@ import InstagramIcon from "../../public/img/ins.svg";
           />
         </a>
         <div class="social_media_block">
+          <a href="https://www.linkedin.com/company/cbh-mechatooling/" target="_blank" class="social_media_circle">
+            <Image src={LinkedInIcon} alt="linkedin" loading="lazy" width={16} height={16} />
+          </a>
           <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
             <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
           </a>
