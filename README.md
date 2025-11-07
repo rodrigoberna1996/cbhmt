@@ -66,3 +66,17 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 🔐 Contact form hardening
+
+The contact page now submits through `/api/contact`, which validates Google reCAPTCHA v3 before forwarding the payload to Mechatooling. Configure your environment variables before running the project:
+
+```bash
+# .env
+PUBLIC_RECAPTCHA_SITE_KEY=your_browser_key
+RECAPTCHA_SECRET_KEY=your_server_key
+# optional, defaults to 0.5
+RECAPTCHA_MIN_SCORE=0.7
+```
+
+Restart the dev server after changing these values so both the client bundle and the API route pick up the new keys.

@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import "../../src/styles/pages/contact.css";
 import CountrySelector from "../components/contact/CountrySelector.astro";
 import InterestSelector from "../components/contact/InterestSelector.astro";
+
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ?? "";
 ---
 
 <Layout title="Servicios">
@@ -41,7 +43,12 @@ import InterestSelector from "../components/contact/InterestSelector.astro";
             </div>
           </h2>
           <div id="w-node-_44b001ab-5363-e9aa-925b-fdfdc691c4cd-578cbd79" class="our_blog w-dyn-list">
-            <form id="form" class="needs-validation" novalidate>
+            <form
+                id="form"
+                class="needs-validation"
+                novalidate
+                data-recaptcha-site-key={recaptchaSiteKey}
+            >
               <!-- Input Name -->
               <div class="mb-5">
                 <label>
@@ -187,6 +194,10 @@ import InterestSelector from "../components/contact/InterestSelector.astro";
   </div>
 </Layout>
 
+{recaptchaSiteKey && (
+  <script src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`} defer></script>
+)}
+
 <style>
   .invalid-feedback,
   .empty-feedback {
@@ -220,45 +231,72 @@ import InterestSelector from "../components/contact/InterestSelector.astro";
     const form = document.getElementById('form');
     const result = document.getElementById('result');
     const submitBtn = document.getElementById('proceed_3d');
+    const buttonTexts = submitBtn.querySelectorAll('.button_text');
+    const RECAPTCHA_SITE_KEY = form?.dataset.recaptchaSiteKey ?? '';
+
+    const setSubmittingState = (isSubmitting) => {
+      submitBtn.disabled = isSubmitting;
+      buttonTexts.forEach((text) => {
+        text.textContent = isSubmitting ? 'Enviando...' : 'Enviar';
+      });
+    };
+
+    const requestRecaptchaToken = () => {
+      if (!RECAPTCHA_SITE_KEY) {
+        return Promise.reject(new Error('Falta configurar la variable PUBLIC_RECAPTCHA_SITE_KEY.'));
+      }
+
+      if (!window.grecaptcha) {
+        return Promise.reject(new Error('No se pudo cargar reCAPTCHA.'));
+      }
+
+      return new Promise((resolve, reject) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(RECAPTCHA_SITE_KEY, { action: 'submit' })
+            .then(resolve)
+            .catch(reject);
+        });
+      });
+    };
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      result.innerHTML = '';
 
-      // Validación del formulario
       form.classList.add('was-validated');
       if (!form.checkValidity()) {
         form.querySelector(':invalid').focus();
         return;
       }
 
-      // Estado de carga
-      submitBtn.disabled = true;
-      const buttonTexts = form.querySelectorAll('.button_text');
-      buttonTexts.forEach(text => text.textContent = 'Enviando...');
+      setSubmittingState(true);
 
       try {
         const formData = new FormData(form);
+        const recaptchaToken = await requestRecaptchaToken();
+        formData.append('recaptchaToken', recaptchaToken);
 
-        // Enviar al endpoint de Mechatooling
-        const response = await fetch('https://mechatooling.com.mx/api/v1/send-email/send-email', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
           body: formData
         });
 
-        if (response.ok) {
-          result.innerHTML = '<p class="text-green-500">¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.</p>';
-          form.reset();
-          form.classList.remove('was-validated');
-        } else {
-          throw new Error('Error al enviar el formulario');
+        const payload = await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error(payload?.message ?? 'Error al enviar el formulario');
         }
+
+        result.innerHTML = `<p class="text-green-500">${payload?.message ?? '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.'}</p>`;
+        form.reset();
+        form.classList.remove('was-validated');
       } catch (error) {
         console.error('Error:', error);
-        result.innerHTML = '<p class="text-red-500">Error al enviar el mensaje. Por favor intente nuevamente.</p>';
+        const errorMessage = error instanceof Error ? error.message : 'Error al enviar el mensaje. Por favor intente nuevamente.';
+        result.innerHTML = `<p class="text-red-500">${errorMessage}</p>`;
       } finally {
-        submitBtn.disabled = false;
-        buttonTexts.forEach(text => text.textContent = 'Enviar');
-
+        setSubmittingState(false);
         setTimeout(() => {
           result.innerHTML = '';
         }, 5000);

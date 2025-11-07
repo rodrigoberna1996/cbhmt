@@ -5,6 +5,45 @@ import FacebookIcon from "../../../public/img/fb.svg";
 import InstagramIcon from "../../../public/img/ins.svg";
 import LinkedInIcon from "../../../public/img/linkedin.svg";
 import "../../styles/components/navbar.css";
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`) || path.startsWith(`${href}#`);
+const inSection = (prefix: string) => path.startsWith(prefix);
+
+const serviceLinks = [
+  { href: "/services#mechanical-design", label: "Diseño mecánico" },
+  { href: "/services#engineering-changes", label: "Cambios de ingeniería" },
+  { href: "/services#integration-services", label: "Integración" },
+  { href: "/services#serial-machining", label: "Maquinado en serie" },
+  { href: "/services#parts-and-repairs-machining", label: "Maquinado de piezas y refacciones mecánicas" },
+  { href: "/services#plc-robot-programming", label: "Programación de PLC y robots" },
+  { href: "/services#faro-arm-measurement", label: "Medición con brazo Faro" },
+  { href: "/services#accredited-measurement", label: "Medición con organismo acreditado" },
+  { href: "/services#tooling-maintenance", label: "Mantenimientos industriales de herramentales y celdas de soldadura" },
+  { href: "/services#naams-calibration", label: "Calibración de herramentales con accesorios de ajustes NAAMS" },
+];
+
+const productLinks = [
+  { href: "/products#checking-fixture", label: "Checking fixture" },
+  { href: "/products#welding-fixture", label: "Welding fixture" },
+  { href: "/products#holding-fixture", label: "Holding fixture" },
+  { href: "/products#assembly-fixture", label: "Assembly fixture" },
+  { href: "/products#poka-yoke", label: "Poka-Yoke" },
+  { href: "/products#mechanical-components", label: "Complementos mecánicos" },
+  { href: "/products#industrial-metalwork", label: "Pailería industrial" },
+  { href: "/products#special-equipment-sales", label: "Venta de equipos especiales" },
+  { href: "/products#automated-handling-systems", label: "Sistemas automatizados" },
+];
+
+const chunkLinks = (links: { href: string; label: string }[], columns = 2) => {
+  const size = Math.ceil(links.length / columns);
+  return Array.from({ length: columns }, (_, index) =>
+    links.slice(index * size, (index + 1) * size)
+  ).filter((column) => column.length > 0);
+};
+
+const serviceGroups = chunkLinks(serviceLinks, 2);
+const productGroups = chunkLinks(productLinks, 2);
 ---
 
 <div gsap-anim-nav="" class="nav-bar">
@@ -43,7 +82,7 @@ import "../../styles/components/navbar.css";
         id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f9-b66b54f4"
         class="nav_links_block"
       >
-        <a href="/about" class="nav_link" style="padding-right: 40px"
+        <a href="/about" class={"nav_link" + (isCurrent("/about") ? " w--current" : "")}
           >Acerca de</a
         >
         <div
@@ -51,71 +90,29 @@ import "../../styles/components/navbar.css";
           data-delay="0"
           class="language_dropdown w-dropdown"
         >
-          <div class="language_dropdown_toggle w-dropdown-toggle">
+          <div class={"language_dropdown_toggle w-dropdown-toggle" + (inSection("/services") ? " current" : "")}>
             <div>Servicios</div>
             <div class="w-icon-dropdown-toggle"></div>
           </div>
-          <nav class="language_dropdown_list w-dropdown-list">
-            <a
-              href="/services#mechanical-design"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Diseño mecánico
-            </a>
-            <a
-              href="/services#engineering-changes"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Cambios de ingeniería
-            </a>
-            <a
-              href="/services#integration-services"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Integración
-            </a>
-            <a
-              href="/services#serial-machining"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Maquinado en serie
-            </a>
-            <a
-              href="/services#parts-and-repairs-machining"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Maquinado de piezas y refacciones mecánicas
-            </a>
-            <a
-              href="/services#plc-robot-programming"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Programación de PLC y robots
-            </a>
-            <a
-              href="/services#faro-arm-measurement"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Medición con brazo Faro
-            </a>
-            <a
-              href="/services#accredited-measurement"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Medición con organismo acreditado
-            </a>
-            <a
-              href="/services#tooling-maintenance"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Mantenimientos industriales de herramentales </br> y celdas de soldadura
-            </a>
-            <a
-              href="/services#naams-calibration"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Calibración de herramentales con accesorios de ajustes NAAMS
-            </a>
+          <nav
+            class="language_dropdown_list w-dropdown-list"
+            style={`--dropdown-columns:${serviceGroups.length};--dropdown-max-width:720px;--dropdown-column-width:360px;--dropdown-column-min:220px;`}
+          >
+            <div class="dropdown_panel">
+              {serviceGroups.map((column, columnIndex) => (
+                <div class="dropdown_column" key={`services-col-${columnIndex}`}>
+                  <ul class="dropdown_list">
+                    {column.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href} class="language_dropdown_link w-dropdown-link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </nav>
         </div>
         <div
@@ -123,68 +120,32 @@ import "../../styles/components/navbar.css";
           data-delay="0"
           class="language_dropdown w-dropdown"
         >
-          <div class="language_dropdown_toggle w-dropdown-toggle">
+          <div class={"language_dropdown_toggle w-dropdown-toggle" + (inSection("/products") ? " current" : "")}>
             <div>Productos</div>
             <div class="w-icon-dropdown-toggle"></div>
           </div>
-          <nav class="language_dropdown_list w-dropdown-list">
-            <a
-              href="/products#checking-fixture"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Checking fixture
-            </a>
-            <a
-              href="/products#welding-fixture"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Welding fixture
-            </a>
-            <a
-              href="/products#holding-fixture"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Holding fixture
-            </a>
-            <a
-              href="/products#assembly-fixture"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Assembly fixture
-            </a>
-            <a
-              href="/products#poka-yoke"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Poka-Yoke
-            </a>
-            <a
-              href="/products#mechanical-components"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Complementos mecánicos
-            </a>
-            <a
-              href="/products#industrial-metalwork"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Pailería industrial
-            </a>
-            <a
-              href="/products#special-equipment-sales"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Venta de equipos especiales
-            </a>
-            <a
-              href="/products#automated-handling-systems"
-              class="language_dropdown_link w-dropdown-link"
-            >
-              Sistemas automatizados
-            </a>
+          <nav
+            class="language_dropdown_list w-dropdown-list"
+            style={`--dropdown-columns:${productGroups.length};--dropdown-max-width:560px;--dropdown-column-width:280px;--dropdown-column-min:200px;`}
+          >
+            <div class="dropdown_panel">
+              {productGroups.map((column, columnIndex) => (
+                <div class="dropdown_column" key={`products-col-${columnIndex}`}>
+                  <ul class="dropdown_list">
+                    {column.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href} class="language_dropdown_link w-dropdown-link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </nav>
         </div>
-        <a href="/contact" class="nav_link">Contacto</a>
+        <a href="/contact" class={"nav_link" + (isCurrent("/contact") ? " w--current" : "")}>Contacto</a>
       </div>
       <div
         id="w-node-_3f571d52-b65f-917c-24da-08674beefd9e-b66b54f4"
@@ -217,3 +178,60 @@ import "../../styles/components/navbar.css";
     <a href="/contact" class="mobile_link_text link4">Contacto</a>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav-bar');
+    const toggle = document.querySelector('.mobile_toggle_block');
+    const mobileLinks = document.querySelectorAll('.mobile_menu_wrapper a');
+    const body = document.body;
+
+    const closeMenu = () => {
+      nav?.classList.remove('menu-open');
+      body.classList.remove('no-scroll');
+    };
+
+    const openMenu = () => {
+      nav?.classList.add('menu-open');
+      body.classList.add('no-scroll');
+    };
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        if (nav.classList.contains('menu-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+    }
+
+    mobileLinks.forEach((a) => a.addEventListener('click', closeMenu));
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
+    const handleViewportChange = (event) => {
+      if (event.matches) {
+        closeMenu();
+      }
+    };
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleViewportChange);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handleViewportChange);
+    }
+
+    const onScroll = () => {
+      if (!nav) return;
+      const scrolled = window.scrollY > 10;
+      nav.classList.toggle('is-sticky', scrolled);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  });
+  </script>
