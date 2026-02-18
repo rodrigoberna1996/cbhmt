@@ -2,18 +2,46 @@
   --nav-accent: #be5e22;
   --nav-hover: rgba(255, 255, 255, 0.08);
   --nav-active-bg: rgba(190, 94, 34, 0.28);
-  --nav-surface: rgba(15, 15, 15, 0.92);
-  --nav-surface-blur: rgba(15, 15, 15, 0.75);
+  --nav-surface: rgba(28, 28, 32, 0.75);
+  --nav-surface-blur: rgba(28, 28, 32, 0.75);
   --nav-border: rgba(255, 255, 255, 0.12);
   --nav-border-strong: rgba(255, 255, 255, 0.2);
-  --nav-text: #f8f8f8;
-  --nav-muted: rgba(248, 248, 248, 0.7);
+  --nav-text: #ffffff;
+  --nav-muted: rgba(255, 255, 255, 0.92);
   --dropdown-column-min: 220px;
   --dropdown-column-width: 260px;
 }
 
 .nav-bar .nav_grid {
   align-items: center;
+}
+
+.nav-bar .nav_logo_img {
+  height: 52px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.nav-bar .navbar_social_block .social_media_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background .2s ease;
+}
+
+.nav-bar .navbar_social_block .social_media_circle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.nav-bar .navbar_social_block img {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .nav-bar .nav_links_block {
@@ -66,10 +94,11 @@
   gap: 0.35rem;
   border-radius: 9999px;
   border: 1px solid transparent;
-  padding: 0.55rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--nav-muted);
   font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
   background-color: transparent;
   transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .25s ease;
 }
@@ -211,11 +240,35 @@ body.no-scroll {
     display: none;
   }
 
+  .nav-bar .mobile_toggle_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background .2s ease;
+  }
+
+  .nav-bar .mobile_toggle_block:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .nav-bar .mobile_menu_icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .nav-bar .nav_logo_img {
+    height: 44px;
+    max-width: 150px;
+  }
+
   .nav-bar .mobile_menu_wrapper {
     position: fixed;
     inset: 0;
     display: none;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(20, 20, 24, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 96px 32px;

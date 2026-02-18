@@ -7,26 +7,25 @@ const options = [
 ];
 ---
 
-<div class="mb-5">
-    <label>
-        <select
-                id="interested"
-                name="interested"
-                required
-                class="contact_input"
-        >
-            <option value="" disabled selected>Estoy interesado en...</option>
-            {
-                options.map(({group, values}) => (
-                        <optgroup label={group}>
-                            {
-                                values.map((item) => (
-                                        <option value={item}>{item}</option>
-                                ))
-                            }
-                        </optgroup>
-                ))
-            }
-        </select>
-    </label>
+<div class="form_field_inner">
+    <label class="form_label" for="interested">Estoy interesado en</label>
+    <select
+            id="interested"
+            name="interested"
+            required
+            class="contact_input"
+    >
+        <option value="" disabled selected>Selecciona producto o servicio</option>
+        {
+            options.map(({group, values}) => (
+                    <optgroup label={group}>
+                        {
+                            values.map((item) => (
+                                    <option value={item}>{item}</option>
+                            ))
+                        }
+                    </optgroup>
+            ))
+        }
+    </select>
 </div>

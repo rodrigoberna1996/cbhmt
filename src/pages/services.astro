@@ -94,17 +94,16 @@ import Calibration from "../assets/img/services/calibration.JPG";
         </style>
       </div>
       <div gsap-anim-fade="" class="mobile_service_tab">
-        <a href="/#mechanical-design" class="mobile_service_tab-link"
-          >Diseño mecánico</a
-        ><a href="/#engineering-changes" class="mobile_service_tab-link">Cambios de ingeniería</a
-        ><a href="/#integration-services" class="mobile_service_tab-link">Integración</a
-        ><a href="/#serial-machining" class="mobile_service_tab-link">Maquinado en serie</a>
-        <a href="/#parts-and-repairs-machining" class="mobile_service_tab-link">Maquinado de piezas y refacciones mecánicas</a>
-        <a href="/#plc-robot-programming" class="mobile_service_tab-link">Programación de PLC y robots</a>
-        <a href="/#faro-arm-measurement" class="mobile_service_tab-link">Medición con brazo faro</a>
-        <a href="/#accredited-measurement" class="mobile_service_tab-link">Medición con organismo acreditado</a>
-        <a href="/#tooling-maintenance" class="mobile_service_tab-link">Mantenimientos industriales de herramentales y celdas de soldadura</a>
-        <a href="/#naams-calibration" class="mobile_service_tab-link">Calibración de herramentales con accesorios de ajustes NAAMS</a>
+        <a href="#mechanical-design" class="mobile_service_tab-link">Diseño mecánico</a>
+        <a href="#engineering-changes" class="mobile_service_tab-link">Cambios de ingeniería</a>
+        <a href="#integration-services" class="mobile_service_tab-link">Integración</a>
+        <a href="#serial-machining" class="mobile_service_tab-link">Maquinado en serie</a>
+        <a href="#parts-and-repairs-machining" class="mobile_service_tab-link">Maquinado de piezas y refacciones mecánicas</a>
+        <a href="#plc-robot-programming" class="mobile_service_tab-link">Programación de PLC y robots</a>
+        <a href="#faro-arm-measurement" class="mobile_service_tab-link">Medición con brazo faro</a>
+        <a href="#accredited-measurement" class="mobile_service_tab-link">Medición con organismo acreditado</a>
+        <a href="#tooling-maintenance" class="mobile_service_tab-link">Mantenimientos industriales de herramentales y celdas de soldadura</a>
+        <a href="#naams-calibration" class="mobile_service_tab-link">Calibración de herramentales con accesorios de ajustes NAAMS</a>
       </div>
       <div class="services_grid">
         <div
@@ -555,51 +554,21 @@ import Calibration from "../assets/img/services/calibration.JPG";
 
     testimonial_splide();
 
-    // All service gallery slider
-    var splide1 = new Splide(".gallery_service-1");
-    var bar1 = splide1.root.querySelector(".gallery_progress_bar-1");
-    // Update the bar width:
-    splide1.on("mounted move", function () {
-      var end = splide1.Components.Controller.getEnd() + 1;
-      bar1.style.width = String((100 * (splide1.index + 1)) / end) + "%";
+    // Montar galerías de servicio solo si existen en la página
+    [1, 2, 3, 4, 5].forEach(function (i) {
+      var el = document.querySelector(".gallery_service-" + i);
+      if (el) {
+        var splide = new Splide(".gallery_service-" + i);
+        var bar = splide.root.querySelector(".gallery_progress_bar-" + i);
+        if (bar) {
+          splide.on("mounted move", function () {
+            var end = splide.Components.Controller.getEnd() + 1;
+            bar.style.width = String((100 * (splide.index + 1)) / end) + "%";
+          });
+        }
+        splide.mount();
+      }
     });
-    splide1.mount();
-
-    var splide2 = new Splide(".gallery_service-2");
-    var bar2 = splide2.root.querySelector(".gallery_progress_bar-2");
-
-    splide2.on("mounted move", function () {
-      var end = splide2.Components.Controller.getEnd() + 1;
-      bar2.style.width = String((100 * (splide2.index + 1)) / end) + "%";
-    });
-    splide2.mount();
-
-    var splide3 = new Splide(".gallery_service-3");
-    var bar3 = splide3.root.querySelector(".gallery_progress_bar-3");
-
-    splide3.on("mounted move", function () {
-      var end = splide3.Components.Controller.getEnd() + 1;
-      bar3.style.width = String((100 * (splide3.index + 1)) / end) + "%";
-    });
-    splide3.mount();
-
-    var splide4 = new Splide(".gallery_service-4");
-    var bar4 = splide4.root.querySelector(".gallery_progress_bar-4");
-
-    splide4.on("mounted move", function () {
-      var end = splide4.Components.Controller.getEnd() + 1;
-      bar4.style.width = String((100 * (splide4.index + 1)) / end) + "%";
-    });
-    splide4.mount();
-
-    var splide5 = new Splide(".gallery_service-5");
-    var bar5 = splide5.root.querySelector(".gallery_progress_bar-5");
-
-    splide5.on("mounted move", function () {
-      var end = splide5.Components.Controller.getEnd() + 1;
-      bar5.style.width = String((100 * (splide5.index + 1)) / end) + "%";
-    });
-    splide5.mount();
 
     function slider1() {
       let splides = $(".slider-1, .slider-2, .slider-3, .slider-4, .slider-5");

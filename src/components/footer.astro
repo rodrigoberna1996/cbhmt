@@ -16,8 +16,9 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
       <div class="footer_logo_container">
         <a
           id="w-node-_2bdf37a7-5113-22b5-c718-f406080443bc-080443b9"
-          aria-current="page"
-          class="footer_logo w-inline-block w--current"
+          href="/"
+          aria-label="CBH Mechatooling - Ir al inicio"
+          class="footer_logo w-inline-block"
         >
           <Image
             src={Logo}
@@ -29,13 +30,13 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
           />
         </a>
         <div class="social_media_block">
-          <a href="https://www.linkedin.com/company/cbh-mechatooling/" target="_blank" class="social_media_circle">
+          <a href="https://www.linkedin.com/company/cbh-mechatooling/" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={LinkedInIcon} alt="linkedin" loading="lazy" width={16} height={16} />
           </a>
-          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
+          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
           </a>
-          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" class="social_media_circle">
+          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={FacebookIcon} alt="facebook" loading="lazy" width={8} height={16} />
           </a>
         </div>
@@ -57,10 +58,10 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
           class="footer_link_box"
         >
           <div class="footer_link-title">Servicios</div>
-          <a href="#mechanical-design" class="footer-link">Diseño mecánico</a>
-          <a href="#engineering-changes" class="footer-link">Cambios de ingeniería</a>
-          <a href="#integration-services" class="footer-link">Integración</a>
-          <a href="#serial-machining" class="footer-link">Maquinado en serie</a>
+          <a href="/services#mechanical-design" class="footer-link">Diseño mecánico</a>
+          <a href="/services#engineering-changes" class="footer-link">Cambios de ingeniería</a>
+          <a href="/services#integration-services" class="footer-link">Integración</a>
+          <a href="/services#serial-machining" class="footer-link">Maquinado en serie</a>
           <div class="footer_link-line"></div>
         </div>
         <div
@@ -68,11 +69,11 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
           class="footer_link_box"
         >
           <div class="footer_link-title">Productos</div>
-          <a href="#checking-fixture" class="footer-link">Checking fixture</a>
-            <a href="#welding-fixture" class="footer-link">Welding fixture</a>
-            <a href="#holding-fixture" class="footer-link">Holding fixture</a>
-            <a href="#assembly-fixture" class="footer-link">Assembly fixture</a>
-            <a href="#poka-yoke" class="footer-link">Poka-Yoke</a>
+          <a href="/products#checking-fixture" class="footer-link">Checking fixture</a>
+          <a href="/products#welding-fixture" class="footer-link">Welding fixture</a>
+          <a href="/products#holding-fixture" class="footer-link">Holding fixture</a>
+          <a href="/products#assembly-fixture" class="footer-link">Assembly fixture</a>
+          <a href="/products#poka-yoke" class="footer-link">Poka-Yoke</a>
           <div class="footer_link-line"></div>
         </div>
         <div
@@ -84,6 +85,7 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
           <a
             href="https://maps.app.goo.gl/ordF95iNCRPSjqvJ7"
             target="_blank"
+            rel="noopener noreferrer"
             class="footer-link"
           >
             Av. las Rosas 314, Loma IX, 76117 San Pedro Martir, Qro.
@@ -102,17 +104,19 @@ import LinkedInIcon from "../../public/img/linkedin.svg";
         <p class="footer-text">Copyright © {new Date().getFullYear()}</p>
       </div>
     </div>
-    <div
+    <button
+      type="button"
       id="scroll-top-top"
       class="scroll_up_block w-node-_2bdf37a7-5113-22b5-c718-f4060804440f-080443b9"
+      aria-label="Volver arriba"
     >
       <div class="footer-rights-texts">Ascender</div>
       <img
         src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/6475b9e9eba1a8c129c84add_scroll%20up%20icon.svg"
         loading="lazy"
-        alt=""
+        alt="Volver arriba"
         class="scroll_up-icon"
       />
-    </div>
+    </button>
   </div>
 </div>

@@ -19,29 +19,12 @@ import Layout from "../layouts/Layout.astro";
                         sujeción, fixtures, collets e integraciones para la industria
                         manufacturera.
                     </p>
-                    <a
-                            gsap-anim-hero-btn=""
-                            href="/contact"
-                            class="hero_button w-inline-block"
-                    >
-                        <div class="btn-grid">
-                            <div class="clip">
-                                <div class="button_text_block">
-                                    <div class="button_text">Obtén tu cotización</div>
-                                </div>
-                                <div class="button_text_block bottom">
-                                    <div class="button_text">Obtén tu cotización</div>
-                                </div>
-                            </div>
-                            <img
-                                    src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/64749cfc88727267a02516d5_button%20arrow.svg"
-                                    loading="lazy"
-                                    alt="Button white arrow"
-                                    class="button_arrow"
-                            />
-                        </div>
-                    </a
-                    >
+                    <a gsap-anim-hero-btn="" href="/contact" class="hero_button hero_cta_btn">
+                        <span class="hero_cta_text">Obtén tu cotización</span>
+                        <svg class="hero_cta_arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
             <div gsap-anim-hero-bg="" class="hero-background"></div>

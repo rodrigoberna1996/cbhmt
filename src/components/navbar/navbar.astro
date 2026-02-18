@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../../../public/img/logo.png";
+import Logo from "../../../public/img/logo-color.svg";
 import FacebookIcon from "../../../public/img/fb.svg";
 import InstagramIcon from "../../../public/img/ins.svg";
 import LinkedInIcon from "../../../public/img/linkedin.svg";
@@ -56,24 +56,26 @@ const productGroups = chunkLinks(productLinks, 2);
         <a
           id="w-node-e63e5f88-269c-02fc-ffde-393cb66b54f7-b66b54f4"
           href="/"
-          aria-current="page"
-          class="logo_link w-inline-block w--current"
+          aria-label="CBH Mechatooling - Ir al inicio"
+          class={"logo_link w-inline-block" + (path === "/" ? " w--current" : "")}
         >
           <Image
             src={Logo}
-            alt="logo-cbhmt"
-            class="logo_link_img"
-            loading="lazy"
+            alt="CBH Mechatooling"
+            class="logo_link_img nav_logo_img"
+            loading="eager"
+            width={180}
+            height={52}
           />
         </a>
         <div class="navbar_social_block">
-          <a href="https://www.linkedin.com/company/cbh-mechatooling/" target="_blank" class="social_media_circle">
+          <a href="https://www.linkedin.com/company/cbh-mechatooling/" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={LinkedInIcon} alt="linkedin" loading="lazy" width={16} height={16} />
           </a>
-          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" class="social_media_circle">
+          <a href="https://www.instagram.com/cbh.mechatooling/" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={InstagramIcon} alt="instagram" loading="lazy" width={16} height={16} />
           </a>
-          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" class="social_media_circle">
+          <a href="https://www.facebook.com/cbh.mechatooling.5" target="_blank" rel="noopener noreferrer" class="social_media_circle">
             <Image src={FacebookIcon} alt="facebook" loading="lazy" width={8} height={16} />
           </a>
         </div>
@@ -158,13 +160,13 @@ const productGroups = chunkLinks(productLinks, 2);
           <img
             src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/6481c033468140038c23d232_menu%20toggle%20icon.svg"
             loading="lazy"
-            alt=""
+            alt="Abrir menú"
             class="mobile_menu_icon menu-dots"
           />
           <img
             src="https://uploads-ssl.webflow.com/64748b66fa7c0d5993fc7935/647f3167116836b758c81807_close_FILL0_wght400_GRAD0_opsz48.svg"
             loading="lazy"
-            alt=""
+            alt="Cerrar menú"
             class="mobile_menu_icon menu-close"
           />
         </div>
