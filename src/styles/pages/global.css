@@ -7,10 +7,14 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-family: sans-serif;
+    /* Offset para navegación por anclas - evita que el navbar tape al cambiar de producto/servicio */
+    scroll-padding-top: 180px;
 }
 
 body {
     margin: 0;
+    /* Espacio para el navbar fijo/absoluto - evita que tape títulos e imágenes */
+    padding-top: 180px;
 }
 
 article,
@@ -3677,7 +3681,8 @@ p {
     display: flex;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    /* Se detiene debajo del navbar (180px) al hacer scroll */
+    top: 180px;
 }
 
 .service_tab-link {
@@ -3697,6 +3702,8 @@ p {
 
 .service_block-one {
     margin-bottom: 10.417vw;
+    /* Evita que el navbar tape el título e imagen al hacer scroll o con enlaces ancla */
+    scroll-margin-top: 180px;
 }
 
 .service_detail_block {

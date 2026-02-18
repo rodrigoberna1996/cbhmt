@@ -592,4 +592,46 @@ import Handling from "../assets/img/products/handling.jpg";
       }
     });
   </script>
+
+  <!-- Scroll con offset al navegar entre productos - evita que el navbar tape el contenido -->
+  <script>
+    (function () {
+      var navOffset = 180;
+      function scrollToSection(hash) {
+        if (!hash || hash === "#") return;
+        var target = document.querySelector(hash);
+        if (target) {
+          var top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        }
+      }
+      document.addEventListener("click", function (e) {
+        var link = e.target.closest("a.service_tab-link, a.mobile_service_tab-link");
+        if (!link) return;
+        var href = link.getAttribute("href");
+        if (href && href.startsWith("#") && href.length > 1) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          scrollToSection(href);
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, "", href);
+          }
+          return false;
+        }
+      }, true);
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.hash) {
+          setTimeout(function () {
+            scrollToSection(window.location.hash);
+          }, 100);
+        }
+      });
+      if (document.readyState !== "loading" && window.location.hash) {
+        setTimeout(function () {
+          scrollToSection(window.location.hash);
+        }, 150);
+      }
+    })();
+  </script>
 </Layout>

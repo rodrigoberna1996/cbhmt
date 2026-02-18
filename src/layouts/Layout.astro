@@ -392,6 +392,43 @@ const {title} = Astro.props;
     testimonial_splide();
 </script>
 
+<!-- Scroll con offset para enlaces del navbar (Servicios/Productos) - evita que tape el contenido -->
+<script is:inline>
+    (function () {
+        var navOffset = 180;
+        function scrollToSection(hash) {
+            if (!hash || hash === "#") return;
+            var target = document.querySelector(hash);
+            if (target) {
+                var top = target.getBoundingClientRect().top + window.scrollY - navOffset;
+                window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+            }
+        }
+        document.addEventListener("click", function (e) {
+            var link = e.target.closest("a.language_dropdown_link, a[href*='#']");
+            if (!link) return;
+            var href = link.getAttribute("href");
+            if (!href || !href.includes("#")) return;
+            var parts = href.split("#");
+            var hash = parts[1];
+            if (!hash) return;
+            var pathPart = parts[0];
+            var linkPath = (pathPart === "" || pathPart === "#") ? window.location.pathname : pathPart.replace(/\/$/, "") || "/";
+            var currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+            if (linkPath === currentPath) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                scrollToSection("#" + hash);
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, "", "#" + hash);
+                }
+                return false;
+            }
+        }, true);
+    })();
+</script>
+
 <!-- Scroll to top -->
 <script>
     $("#scroll-top-top").click(function () {

@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
-    "astro": "^5.15.4"
+    "astro": "^5.17.2"
   }
 }
