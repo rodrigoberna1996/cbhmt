@@ -191,27 +191,11 @@
 }
 
 .nav-bar.is-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   background-color: var(--nav-surface-blur);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--nav-border);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  backdrop-filter: saturate(160%) blur(14px);
-  z-index: 9999;
-  animation: navFadeIn .3s ease;
-}
-
-@keyframes navFadeIn {
-  from {
-    transform: translateY(-8px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .nav-bar .mobile_link_text {

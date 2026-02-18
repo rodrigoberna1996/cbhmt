@@ -18,7 +18,7 @@ import Maintenance from "../assets/img/services/maintenance.JPG";
 import Calibration from "../assets/img/services/calibration.JPG";
 ---
 
-<Layout title="Servicios">
+<Layout title="Servicios" preloadHero="/img/hero/services.png">
   <div class="main_wrapper">
     <div class="section_resource_hero">
       <div class="grid_wrapper">
@@ -58,11 +58,6 @@ import Calibration from "../assets/img/services/calibration.JPG";
     <div class="section_services_list">
       <div class="service_code w-embed">
         <style>
-          a.service_tab-link.w--current {
-            color: #b52437;
-            transition: 0.5s ease;
-          }
-
           .service_slider .splide__slide {
             width: 46% !important;
           }
@@ -102,113 +97,26 @@ import Calibration from "../assets/img/services/calibration.JPG";
         <a href="#plc-robot-programming" class="mobile_service_tab-link">Programación de PLC y robots</a>
         <a href="#faro-arm-measurement" class="mobile_service_tab-link">Medición con brazo faro</a>
         <a href="#accredited-measurement" class="mobile_service_tab-link">Medición con organismo acreditado</a>
-        <a href="#tooling-maintenance" class="mobile_service_tab-link">Mantenimientos industriales de herramentales y celdas de soldadura</a>
-        <a href="#naams-calibration" class="mobile_service_tab-link">Calibración de herramentales con accesorios de ajustes NAAMS</a>
+        <a href="#tooling-maintenance" class="mobile_service_tab-link">Mantenimientos industriales</a>
+        <a href="#naams-calibration" class="mobile_service_tab-link">Calibración NAAMS</a>
       </div>
       <div class="services_grid">
         <div
           id="w-node-_89edd147-3c53-bc50-b2be-f33079da3d09-578cbd7c"
           class="services_tab_block"
         >
-          <div gsap-anim-fadeup="" class="services_tab">
-            <a href="#mechanical-design" class="service_tab-link"
-              >Diseño mecánico</a
-            ><a href="#engineering-changes" class="service_tab-link"
-              >Cambios de ingeniería</a
-            ><a href="#integration-services" class="service_tab-link"
-              >Integración</a
-            ><a href="#serial-machining" class="service_tab-link"
-              >Maquinado en serie</a
-            ><a href="#parts-and-repairs-machining" class="service_tab-link"
-              >Maquinado de piezas y refacciones mecánicas</a
-            ><a href="#plc-robot-programming" class="service_tab-link"
-              >Programación de PLC y robots</a
-            ><a href="#faro-arm-measurement" class="service_tab-link"
-              >Medición con brazo Faro</a
-            ><a href="#accredited-measurement" class="service_tab-link"
-              >Medición con organismo acreditado</a
-            ><a href="#tooling-maintenance" class="service_tab-link"
-              >Mantenimientos industriales de herramentales y celdas de soldadura</a
-            ><a href="#naams-calibration" class="service_tab-link"
-              >Calibración de herramentales con accesorios de ajustes NAAMS</a
-            ><a href="/contact" class="get_a_quote_btn_block w-inline-block">
-              <div class="btn-grid">
-                <div class="clip">
-                  <div class="button_text_block">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                  <div class="button_text_block bottom">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                </div>
-                <div class="sub_button-arrow w-embed">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="9"
-                    viewbox="0 0 20 9"
-                    fill="none"
-                  >
-                    <rect
-                      y="4"
-                      width="14"
-                      height="1"
-                      fill="#151515"
-                      fill-opacity="0.6"></rect>
-                    <path
-                      d="M14 8V1L19.5 4.5L14 8Z"
-                      fill="#151515"
-                      fill-opacity="0.6"
-                      stroke="#151515"
-                      stroke-opacity="0.6"
-                      stroke-width="0.2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="sub_button-line"></div>
-            </a>
-          </div>
-          <div class="service_title_block">
-            <h2 gsap-anim-letter="txtstragger" class="heading_2-black">
-              Explorar todo
-            </h2>
-            <a href="/services" class="get_a_quote_btn_block w-inline-block">
-              <div class="btn-grid">
-                <div class="clip">
-                  <div class="button_text_block">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                  <div class="button_text_block bottom">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                </div>
-                <div class="sub_button-arrow w-embed">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="9"
-                    viewbox="0 0 20 9"
-                    fill="none"
-                  >
-                    <rect
-                      y="4"
-                      width="14"
-                      height="1"
-                      fill="#151515"
-                      fill-opacity="0.6"></rect>
-                    <path
-                      d="M14 8V1L19.5 4.5L14 8Z"
-                      fill="#151515"
-                      fill-opacity="0.6"
-                      stroke="#151515"
-                      stroke-opacity="0.6"
-                      stroke-width="0.2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="sub_button-line"></div>
-            </a>
-          </div>
+          <nav gsap-anim-fadeup="" class="services_tab" aria-label="Navegación de servicios">
+            <a href="#mechanical-design" class="service_tab-link">Diseño mecánico</a>
+            <a href="#engineering-changes" class="service_tab-link">Cambios de ingeniería</a>
+            <a href="#integration-services" class="service_tab-link">Integración</a>
+            <a href="#serial-machining" class="service_tab-link">Maquinado en serie</a>
+            <a href="#parts-and-repairs-machining" class="service_tab-link">Maquinado de piezas y refacciones mecánicas</a>
+            <a href="#plc-robot-programming" class="service_tab-link">Programación de PLC y robots</a>
+            <a href="#faro-arm-measurement" class="service_tab-link">Medición con brazo Faro</a>
+            <a href="#accredited-measurement" class="service_tab-link">Medición con organismo acreditado</a>
+            <a href="#tooling-maintenance" class="service_tab-link">Mantenimientos industriales</a>
+            <a href="#naams-calibration" class="service_tab-link">Calibración NAAMS</a>
+          </nav>
         </div>
         <div
           id="w-node-fd635576-8b21-b573-bc32-d5a0270e6ca2-578cbd7c"
@@ -219,8 +127,8 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one">               
-                <Image src={Diseno} alt="" />
-                <Image src={Diseno2} alt="" />
+                <Image src={Diseno} alt="Diseño mecánico" width={800} height={450} loading="eager" fetchpriority="high" />
+                <Image src={Diseno2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -249,7 +157,7 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={EngineeringChanges} alt="" />
+              <Image src={EngineeringChanges} alt="Cambios de ingeniería" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -275,8 +183,8 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={Integracion} alt="" />
-              <Image src={Integracion2} alt="" />
+              <Image src={Integracion} alt="Integración" width={800} height={450} loading="lazy" />
+              <Image src={Integracion2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -304,8 +212,8 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={SerialMachining} alt="" />
-              <Image src={SerialMachining2} alt="" />
+              <Image src={SerialMachining} alt="Maquinado en serie" width={800} height={450} loading="lazy" />
+              <Image src={SerialMachining2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -332,7 +240,7 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={PartsRepairsMachining} alt="" />
+              <Image src={PartsRepairsMachining} alt="Maquinado de piezas y refacciones mecánicas" width={800} height={450} loading="lazy" />
               
               </div>
               <div
@@ -360,8 +268,8 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={Programing} alt="" />
-              <Image src={Programing2} alt="" />
+              <Image src={Programing} alt="Programación de PLC y robots" width={800} height={450} loading="lazy" />
+              <Image src={Programing2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -391,7 +299,7 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={FaroArm} alt="" />
+              <Image src={FaroArm} alt="Medición con brazo Faro" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -419,8 +327,8 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={Accredited} alt="" />
-              <Image src={Accredited2} alt="" />
+              <Image src={Accredited} alt="Medición con organismo acreditado" width={800} height={450} loading="lazy" />
+              <Image src={Accredited2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -447,7 +355,7 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block-one"
               >
-              <Image src={Maintenance} alt="" />
+              <Image src={Maintenance} alt="Mantenimientos industriales" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -475,7 +383,7 @@ import Calibration from "../assets/img/services/calibration.JPG";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block-three"
               >
-              <Image src={Calibration} alt="" />
+              <Image src={Calibration} alt="Calibración NAAMS" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -606,6 +514,40 @@ import Calibration from "../assets/img/services/calibration.JPG";
     });
   </script>
 
+  <!-- Indicador de sección activa según scroll -->
+  <script>
+    (function () {
+      var sections = document.querySelectorAll(".services_content .service_block-one[id]");
+      var desktopLinks = document.querySelectorAll(".services_tab .service_tab-link[href^='#']");
+      var mobileLinks = document.querySelectorAll(".mobile_service_tab .mobile_service_tab-link[href^='#']");
+      if (!sections.length || (!desktopLinks.length && !mobileLinks.length)) return;
+
+      function setActive(hash) {
+        var allLinks = Array.from(desktopLinks).concat(Array.from(mobileLinks));
+        allLinks.forEach(function (link) {
+          link.classList.toggle("w--current", link.getAttribute("href") === hash);
+        });
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            if (id) setActive("#" + id);
+          });
+        },
+        { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      );
+
+      sections.forEach(function (sec) {
+        if (sec.id) observer.observe(sec);
+      });
+
+      if (window.location.hash) setActive(window.location.hash);
+    })();
+  </script>
+
   <!-- Scroll con offset al navegar entre servicios - evita que el navbar tape el contenido -->
   <script>
     (function () {
@@ -627,6 +569,9 @@ import Calibration from "../assets/img/services/calibration.JPG";
           e.stopPropagation();
           e.stopImmediatePropagation();
           scrollToSection(href);
+          document.querySelectorAll(".service_tab-link, .mobile_service_tab-link").forEach(function (l) {
+            l.classList.toggle("w--current", l.getAttribute("href") === href);
+          });
           if (window.history && window.history.replaceState) {
             window.history.replaceState(null, "", href);
           }

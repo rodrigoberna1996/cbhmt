@@ -13,7 +13,7 @@ import Special from "../assets/img/products/special.JPG";
 import Handling from "../assets/img/products/handling.jpg";
 ---
 
-<Layout title="Productos">
+<Layout title="Productos" preloadHero="/img/hero/services.png">
   <div class="main_wrapper">
     <div class="section_products_hero">
       <div class="grid_wrapper">
@@ -53,11 +53,6 @@ import Handling from "../assets/img/products/handling.jpg";
     <div class="section_services_list">
       <div class="service_code w-embed">
         <style>
-          a.service_tab-link.w--current {
-            color: #b52437;
-            transition: 0.5s ease;
-          }
-
           .service_slider .splide__slide {
             width: 46% !important;
           }
@@ -98,14 +93,14 @@ import Handling from "../assets/img/products/handling.jpg";
             <a href="#mechanical-components" class="mobile_service_tab-link">Complementos mecánicos industriales</a>
             <a href="#industrial-metalwork" class="mobile_service_tab-link">Pailería industrial</a>
             <a href="#special-equipment-sales" class="mobile_service_tab-link">Venta de equipos especiales</a>
-            <a href="#automated-handling-systems" class="mobile_service_tab-link">Sistemas automatizados para manejo, transporte e inspección de materiales</a>
+            <a href="#automated-handling-systems" class="mobile_service_tab-link">Sistemas automatizados</a>
       </div>
       <div class="services_grid">
         <div
           id="w-node-_89edd147-3c53-bc50-b2be-f33079da3d09-578cbd7c"
           class="services_tab_block"
         >
-          <div gsap-anim-fadeup="" class="services_tab">
+          <nav gsap-anim-fadeup="" class="services_tab" aria-label="Navegación de productos">
             <a href="#checking-fixture" class="service_tab-link">Checking fixture</a>
             <a href="#welding-fixture" class="service_tab-link">Welding fixture</a>
             <a href="#holding-fixture" class="service_tab-link">Holding fixture</a>
@@ -114,85 +109,8 @@ import Handling from "../assets/img/products/handling.jpg";
             <a href="#mechanical-components" class="service_tab-link">Complementos mecánicos industriales</a>
             <a href="#industrial-metalwork" class="service_tab-link">Pailería industrial</a>
             <a href="#special-equipment-sales" class="service_tab-link">Venta de equipos especiales</a>
-            <a href="#automated-handling-systems" class="service_tab-link">Sistemas automatizados para manejo, transporte e inspección de materiales</a>
-            <a href="/contact" class="get_a_quote_btn_block w-inline-block">
-              <div class="btn-grid">
-                <div class="clip">
-                  <div class="button_text_block">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                  <div class="button_text_block bottom">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                </div>
-                <div class="sub_button-arrow w-embed">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="9"
-                    viewbox="0 0 20 9"
-                    fill="none"
-                  >
-                    <rect
-                      y="4"
-                      width="14"
-                      height="1"
-                      fill="#151515"
-                      fill-opacity="0.6"></rect>
-                    <path
-                      d="M14 8V1L19.5 4.5L14 8Z"
-                      fill="#151515"
-                      fill-opacity="0.6"
-                      stroke="#151515"
-                      stroke-opacity="0.6"
-                      stroke-width="0.2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="sub_button-line"></div>
-            </a>
-          </div>
-          <div class="service_title_block">
-            <h2 gsap-anim-letter="txtstragger" class="heading_2-black">
-              Explorar todo
-            </h2>
-            <a href="/services" class="get_a_quote_btn_block w-inline-block">
-              <div class="btn-grid">
-                <div class="clip">
-                  <div class="button_text_block">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                  <div class="button_text_block bottom">
-                    <div class="sub_button-text">Obtén tu cotización</div>
-                  </div>
-                </div>
-                <div class="sub_button-arrow w-embed">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="9"
-                    viewbox="0 0 20 9"
-                    fill="none"
-                  >
-                    <rect
-                      y="4"
-                      width="14"
-                      height="1"
-                      fill="#151515"
-                      fill-opacity="0.6"></rect>
-                    <path
-                      d="M14 8V1L19.5 4.5L14 8Z"
-                      fill="#151515"
-                      fill-opacity="0.6"
-                      stroke="#151515"
-                      stroke-opacity="0.6"
-                      stroke-width="0.2"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="sub_button-line"></div>
-            </a>
-          </div>
+            <a href="#automated-handling-systems" class="service_tab-link">Sistemas automatizados</a>
+          </nav>
         </div>
         <div
           id="w-node-fd635576-8b21-b573-bc32-d5a0270e6ca2-578cbd7c"
@@ -205,7 +123,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Checking} alt="" />
+              <Image src={Checking} alt="Checking fixture" width={800} height={450} loading="eager" fetchpriority="high" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -234,7 +152,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Welding} alt="" />
+              <Image src={Welding} alt="Welding fixture" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -261,7 +179,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Holding} alt="" />
+              <Image src={Holding} alt="Holding fixture" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -289,8 +207,8 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Assembly} alt="" />
-              <Image src={Assembly2} alt="" />
+              <Image src={Assembly} alt="Assembly fixture" width={800} height={450} loading="lazy" />
+              <Image src={Assembly2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -319,7 +237,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Poka} alt="" />
+              <Image src={Poka} alt="Poka-Yoke" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -347,7 +265,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Components} alt="" />
+              <Image src={Components} alt="Complementos mecánicos industriales" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -374,7 +292,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607d-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Metalwork} alt="" />
+              <Image src={Metalwork} alt="Pailería industrial" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_2714077d-5f4b-2b6b-6a08-8f5b539c607e-578cbd7c"
@@ -402,7 +320,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_19e76255-aba0-3898-18ac-d06a839fd750-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Special} alt="" />
+              <Image src={Special} alt="Venta de equipos especiales" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_98d2956b-63e2-af23-9457-fd190c074d6b-578cbd7c"
@@ -433,7 +351,7 @@ import Handling from "../assets/img/products/handling.jpg";
                 id="w-node-_5be18822-ad16-4093-c929-f38c615561c2-578cbd7c"
                 class="service_image_block"
               >
-              <Image src={Handling} alt="" />
+              <Image src={Handling} alt="Sistemas automatizados" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_5be18822-ad16-4093-c929-f38c615561c3-578cbd7c"
@@ -563,6 +481,40 @@ import Handling from "../assets/img/products/handling.jpg";
     });
   </script>
 
+  <!-- Indicador de sección activa según scroll -->
+  <script>
+    (function () {
+      var sections = document.querySelectorAll(".services_content .service_block-one[id]");
+      var desktopLinks = document.querySelectorAll(".services_tab .service_tab-link[href^='#']");
+      var mobileLinks = document.querySelectorAll(".mobile_service_tab .mobile_service_tab-link[href^='#']");
+      if (!sections.length || (!desktopLinks.length && !mobileLinks.length)) return;
+
+      function setActive(hash) {
+        var allLinks = Array.from(desktopLinks).concat(Array.from(mobileLinks));
+        allLinks.forEach(function (link) {
+          link.classList.toggle("w--current", link.getAttribute("href") === hash);
+        });
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            if (id) setActive("#" + id);
+          });
+        },
+        { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      );
+
+      sections.forEach(function (sec) {
+        if (sec.id) observer.observe(sec);
+      });
+
+      if (window.location.hash) setActive(window.location.hash);
+    })();
+  </script>
+
   <!-- Scroll con offset al navegar entre productos - evita que el navbar tape el contenido -->
   <script>
     (function () {
@@ -584,6 +536,9 @@ import Handling from "../assets/img/products/handling.jpg";
           e.stopPropagation();
           e.stopImmediatePropagation();
           scrollToSection(href);
+          document.querySelectorAll(".service_tab-link, .mobile_service_tab-link").forEach(function (l) {
+            l.classList.toggle("w--current", l.getAttribute("href") === href);
+          });
           if (window.history && window.history.replaceState) {
             window.history.replaceState(null, "", href);
           }

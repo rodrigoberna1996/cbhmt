@@ -2,11 +2,14 @@
 import Navbar from "../components/navbar/navbar.astro";
 import Footer from "../components/footer.astro";
 import "../styles/pages/global.css";
+
 interface Props {
     title: string;
+    /** Ruta de la imagen del hero para preload (ej: /img/hero/home.png) */
+    preloadHero?: string;
 }
 
-const {title} = Astro.props;
+const { title, preloadHero } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +20,9 @@ const {title} = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    {preloadHero && (
+      <link rel="preload" as="image" href={preloadHero} fetchpriority="high" />
+    )}
     <link rel="stylesheet" href="/asset/library/@splidejs/splide@3.2.2/dist/css/splide-core.min.css"/>
 
     <script src="/asset/ajax/libs/gsap/3.11.4/gsap.min.js" type="text/javascript"></script>
