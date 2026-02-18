@@ -3334,6 +3334,7 @@ p {
 }
 
 .whyus-text {
+    width: 100%;
     color: rgba(21, 21, 21, .75);
     font-size: 16px;
     line-height: 1.65;
@@ -3342,6 +3343,26 @@ p {
     hyphens: auto;
     padding-top: 2.083vw;
     padding-bottom: 2.604vw;
+}
+
+.whyus_subheading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #be5e22;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.02em;
+}
+
+.whyus-text p {
+    margin: 0 0 1rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    line-height: 1.65;
+}
+
+.whyus-text p:last-child {
+    margin-bottom: 0;
 }
 
 .whyus-image {
@@ -3384,6 +3405,87 @@ p {
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 0;
+}
+
+.section_mvv {
+    padding-top: 3.5vw;
+    padding-bottom: 9.375vw;
+    background: linear-gradient(180deg, rgba(250, 250, 250, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mvv_block.slogan_block {
+    padding-left: 0;
+    padding-right: 0;
+    grid-column: 2;
+    justify-self: stretch;
+}
+
+.mvv_inner_block {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    max-width: 100%;
+}
+
+.mvv_heading {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #151515;
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+.mvv_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 0;
+}
+
+.mvv_card {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2rem 2rem 2.5rem;
+    box-shadow: 0 2px 12px rgba(21, 21, 21, 0.06);
+    border: 1px solid rgba(237, 237, 237, 0.8);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mvv_card:hover {
+    box-shadow: 0 8px 32px rgba(21, 21, 21, 0.08);
+    border-color: rgba(190, 94, 34, 0.2);
+}
+
+.mvv_card-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #be5e22 0%, #d17a3a 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+.mvv_card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #be5e22;
+    margin: 0 0 1rem 0;
+}
+
+.mvv_card-text {
+    color: rgba(21, 21, 21, 0.8);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .section_journey {
@@ -5415,7 +5517,7 @@ p {
     }
 
     .whyus-text {
-        width: 80%;
+        width: 100%;
         font-size: 16px;
     }
 
@@ -5746,7 +5848,7 @@ p {
     }
 
     .whyus-text {
-        width: 70%;
+        width: 100%;
         font-size: 16px;
     }
 
@@ -5942,6 +6044,23 @@ p {
 
     .heading_2-black {
         font-size: 36px;
+    }
+
+    .mvv_block.slogan_block {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .mvv_content {
+        gap: 1.5rem;
+    }
+
+    .mvv_card {
+        padding: 1.75rem 1.75rem 1.75rem 2rem;
+    }
+
+    .mvv_card-title {
+        font-size: 1.125rem;
     }
 
     .services_list_top {
@@ -6221,6 +6340,37 @@ p {
 
     .section_why_us {
         padding-bottom: 100px;
+    }
+
+    .section_mvv {
+        padding-top: 50px;
+        padding-bottom: 80px;
+    }
+
+    .mvv_block.slogan_block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mvv_heading {
+        margin-bottom: 2rem;
+    }
+
+    .mvv_content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .mvv_card {
+        padding: 1.5rem 1.5rem 1.5rem 1.875rem;
+    }
+
+    .mvv_card-title {
+        font-size: 1.125rem;
+    }
+
+    .mvv_card-text {
+        font-size: 15px;
     }
 
     .why_us_block {
@@ -7353,6 +7503,33 @@ p {
 
     .section_why_us {
         padding-bottom: 60px;
+    }
+
+    .section_mvv {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .mvv_block.slogan_block {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mvv_heading {
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+
+    .mvv_card {
+        padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    }
+
+    .mvv_card-title {
+        font-size: 1rem;
+    }
+
+    .mvv_card-text {
+        font-size: 14px;
     }
 
     .section_journey {

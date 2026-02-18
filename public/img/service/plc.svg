@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="60" viewBox="0 0 46 60" fill="none">
+  <!-- PLC controller body - main panel -->
+  <path d="M35 24H14V38H35V24Z" fill="#151515" fill-opacity="0.12"/>
+  <path d="M35 24H14V38H35V24Z" stroke="#151515" stroke-width="0.75" stroke-linejoin="round"/>
+  <!-- Top section - display -->
+  <path d="M32 16H17V24H32V16Z" stroke="#151515" stroke-width="0.75" stroke-linejoin="round"/>
+  <!-- Bottom section - I/O terminals -->
+  <path d="M28 38H21V44H28V38Z" stroke="#151515" stroke-width="0.75" stroke-linejoin="round"/>
+  <!-- LED indicator (active output) -->
+  <circle cx="23" cy="31" r="1.5" fill="#be5e22"/>
+</svg>
