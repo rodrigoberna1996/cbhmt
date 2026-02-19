@@ -5,8 +5,19 @@ import F1 from "../../public/img/factory/f1.JPG"
 import F2 from "../../public/img/factory/f2.JPG"
 import F3 from "../../public/img/factory/f3.JPG"
 import F4 from "../../public/img/factory/f4.jpg"
-import F5 from "../../public/img/factory/f5.jpg"
+import C1 from "../../public/img/factory/DSC01153.JPG"
+import C2 from "../../public/img/factory/DSC01160.JPG"
+import C3 from "../../public/img/factory/DSC01163.JPG"
+import C4 from "../../public/img/factory/DSC01167.JPG"
+import C5 from "../../public/img/factory/DSC01278.JPG"
+import C6 from "../../public/img/factory/DSC01328.JPG"
+import C7 from "../../public/img/factory/DSC01333.JPG"
+import C8 from "../../public/img/factory/DSC01342.JPG"
+import C9 from "../../public/img/factory/DSC01348.JPG"
+import C10 from "../../public/img/factory/DSC01358.JPG"
+import C11 from "../../public/img/factory/DSC01429.JPG"
 
+const factoryImages = [F1, F2, F3, F4, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11];
 ---
 <div class="section_company_images">
     <div class="grid_wrapper">
@@ -45,49 +56,17 @@ import F5 from "../../public/img/factory/f5.jpg"
                 </div>
                 <div class="splide__track w-dyn-list">
                     <div role="list" class="splide__list w-dyn-items">
-                        <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
-                            <div class="company_image_wrapper">
-                                <Image
-                                        src={F1}
-                                        loading="lazy" alt=""
+                        {factoryImages.map((img) => (
+                            <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
+                                <div class="company_image_wrapper">
+                                    <Image
+                                        src={img}
+                                        loading="lazy" alt="Capacidad de fábrica"
                                         sizes="(max-width: 991px) 100vw, (max-width: 1279px) 1vw, (max-width: 1439px) 100vw, (max-width: 1919px) 1vw, 66px"
                                         class="company_image"/>
+                                </div>
                             </div>
-                        </div>
-                        <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
-                            <div class="company_image_wrapper">
-                                <Image
-                                        src={F2}
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 991px) 100vw, (max-width: 1279px) 1vw, (max-width: 1439px) 100vw, (max-width: 1919px) 1vw, 66px"
-                                        class="company_image"/>
-                            </div>
-                        </div>
-                        <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
-                            <div class="company_image_wrapper">
-                                <Image
-                                        src={F3}
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 991px) 100vw, (max-width: 1279px) 1vw, (max-width: 1439px) 100vw, (max-width: 1919px) 1vw, 66px"
-                                        class="company_image"/>
-                            </div>
-                        </div>
-                        <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
-                            <div class="company_image_wrapper">
-                                <Image
-                                        src={F4}
-                                        loading="lazy" alt="" class="company_image"/>
-                            </div>
-                        </div>
-                        <div gsap-anim-fade role="listitem" class="splide__slide w-dyn-item">
-                            <div class="company_image_wrapper">
-                                <Image
-                                        src={F5}
-                                        loading="lazy" alt=""
-                                        sizes="(max-width: 991px) 100vw, (max-width: 1279px) 1vw, (max-width: 1439px) 100vw, (max-width: 1919px) 1vw, 66px"
-                                        class="company_image"/>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
                 <div class="progressbar_block">

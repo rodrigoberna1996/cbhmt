@@ -1,17 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Diseno from "../assets/img/services/diseno.JPG";
-import Diseno2 from "../assets/img/services/diseno2.JPG";
+import Diseno from "../assets/img/services/DSC01405.JPG";
 import EngineeringChanges from "../assets/img/services/engineering-changes.JPG";
-import Integracion from "../assets/img/services/integracion.jpg";
-import Integracion2 from "../assets/img/services/integracion2.jpg";
+import Integracion1 from "../assets/img/services/DSC01211.JPG";
+import Integracion2 from "../assets/img/services/DSC01213.JPG";
+import Integracion3 from "../assets/img/services/DSC01227.JPG";
+
+const integracionImages = [Integracion1, Integracion2, Integracion3];
 import SerialMachining from "../assets/img/services/serial-machining.JPG";
 import SerialMachining2 from "../assets/img/services/serial-machining2.JPG";
 import PartsRepairsMachining from "../assets/img/services/parts-and-repairs-machining.jpg";
+import PartsRepairs1 from "../assets/img/services/DSC01360.JPG";
+import PartsRepairs2 from "../assets/img/services/DSC01434.JPG";
+
+const partsRepairsImages = [PartsRepairsMachining, PartsRepairs1, PartsRepairs2];
 import Programing from "../assets/img/services/programing.png";
 import Programing2 from "../assets/img/services/programing2.JPG";
-import FaroArm from "../assets/img/services/faro-arm.JPG";
+import ProgramingPLC from "../assets/img/services/DSC01254.JPG";
+
+const plcImages = [Programing, Programing2, ProgramingPLC];
+import Faro1 from "../assets/img/services/DSC01368.JPG";
+import Faro2 from "../assets/img/services/DSC01388.JPG";
+import Faro3 from "../assets/img/services/DSC01397.JPG";
+
+const faroImages = [Faro1, Faro2, Faro3];
 import Accredited from "../assets/img/services/accredited.JPG";
 import Accredited2 from "../assets/img/services/accredited2.JPG";
 import Maintenance from "../assets/img/services/maintenance.JPG";
@@ -64,6 +77,95 @@ import Calibration from "../assets/img/services/calibration.JPG";
 
           .section_services_list {
             contain: paint;
+          }
+
+          /* Integration slideshow - efecto tipo GIF */
+          .integration-slideshow {
+            position: relative;
+          }
+
+          .integration-slideshow .integration-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+          }
+
+          .integration-slideshow .integration-slide.active {
+            opacity: 1;
+          }
+
+          /* Faro slideshow - efecto tipo GIF */
+          .faro-slideshow {
+            position: relative;
+          }
+
+          .faro-slideshow .faro-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+          }
+
+          .faro-slideshow .faro-slide.active {
+            opacity: 1;
+          }
+
+          /* PLC slideshow - efecto tipo GIF */
+          .plc-slideshow {
+            position: relative;
+          }
+
+          .plc-slideshow .plc-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+          }
+
+          .plc-slideshow .plc-slide.active {
+            opacity: 1;
+          }
+
+          /* Maquinado de piezas slideshow - efecto tipo GIF */
+          .parts-repairs-slideshow {
+            position: relative;
+          }
+
+          .parts-repairs-slideshow .parts-repairs-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+          }
+
+          .parts-repairs-slideshow .parts-repairs-slide.active {
+            opacity: 1;
+          }
+
+          /* Diseño mecánico: enfocar parte derecha de la foto */
+          #mechanical-design .service_image_block-one img {
+            object-position: right center;
           }
 
           .mobile_service_tab.active {
@@ -126,9 +228,9 @@ import Calibration from "../assets/img/services/calibration.JPG";
               <div
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
-                class="service_image_block-one">               
+                class="service_image_block-one"
+              >
                 <Image src={Diseno} alt="Diseño mecánico" width={800} height={450} loading="eager" fetchpriority="high" />
-                <Image src={Diseno2} alt="" width={800} height={450} loading="lazy" />
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -181,10 +283,19 @@ import Calibration from "../assets/img/services/calibration.JPG";
               <div
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
-                class="service_image_block-one"
+                class="service_image_block-one integration-slideshow"
               >
-              <Image src={Integracion} alt="Integración" width={800} height={450} loading="lazy" />
-              <Image src={Integracion2} alt="" width={800} height={450} loading="lazy" />
+                {integracionImages.map((img, i) => (
+                  <Image
+                    src={img}
+                    alt="Integración"
+                    width={800}
+                    height={450}
+                    loading={i === 0 ? "lazy" : "lazy"}
+                    class={`integration-slide ${i === 0 ? "active" : ""}`}
+                    fetchpriority={i === 0 ? "high" : undefined}
+                  />
+                ))}
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -238,10 +349,18 @@ import Calibration from "../assets/img/services/calibration.JPG";
               <div
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
-                class="service_image_block-one"
+                class="service_image_block-one parts-repairs-slideshow"
               >
-              <Image src={PartsRepairsMachining} alt="Maquinado de piezas y refacciones mecánicas" width={800} height={450} loading="lazy" />
-              
+                {partsRepairsImages.map((img, i) => (
+                  <Image
+                    src={img}
+                    alt="Maquinado de piezas y refacciones mecánicas"
+                    width={800}
+                    height={450}
+                    loading={i === 0 ? "lazy" : "lazy"}
+                    class={`parts-repairs-slide ${i === 0 ? "active" : ""}`}
+                  />
+                ))}
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -266,10 +385,18 @@ import Calibration from "../assets/img/services/calibration.JPG";
               <div
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
-                class="service_image_block-one"
+                class="service_image_block-one plc-slideshow"
               >
-              <Image src={Programing} alt="Programación de PLC y robots" width={800} height={450} loading="lazy" />
-              <Image src={Programing2} alt="" width={800} height={450} loading="lazy" />
+                {plcImages.map((img, i) => (
+                  <Image
+                    src={img}
+                    alt="Programación de PLC y robots"
+                    width={800}
+                    height={450}
+                    loading={i === 0 ? "lazy" : "lazy"}
+                    class={`plc-slide ${i === 0 ? "active" : ""}`}
+                  />
+                ))}
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -297,9 +424,19 @@ import Calibration from "../assets/img/services/calibration.JPG";
               <div
                 gsap-anim-fadeup=""
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45b-578cbd7c"
-                class="service_image_block-one"
+                class="service_image_block-one faro-slideshow"
               >
-              <Image src={FaroArm} alt="Medición con brazo Faro" width={800} height={450} loading="lazy" />
+                {faroImages.map((img, i) => (
+                  <Image
+                    src={img}
+                    alt="Medición con brazo Faro"
+                    width={800}
+                    height={450}
+                    loading={i === 0 ? "lazy" : "lazy"}
+                    class={`faro-slide ${i === 0 ? "active" : ""}`}
+                    fetchpriority={i === 0 ? "high" : undefined}
+                  />
+                ))}
               </div>
               <div
                 id="w-node-_39193eb8-dc62-5091-c256-45b51f84b45c-578cbd7c"
@@ -500,6 +637,62 @@ import Calibration from "../assets/img/services/calibration.JPG";
     }
 
     slider1();
+
+    // Slideshow automático para Integración (efecto tipo GIF)
+    (function () {
+      var container = document.querySelector(".integration-slideshow");
+      if (!container) return;
+      var slides = container.querySelectorAll(".integration-slide");
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 3000);
+    })();
+
+    // Slideshow automático para Medición con brazo Faro (efecto tipo GIF)
+    (function () {
+      var container = document.querySelector(".faro-slideshow");
+      if (!container) return;
+      var slides = container.querySelectorAll(".faro-slide");
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 3000);
+    })();
+
+    // Slideshow automático para Programación PLC (efecto tipo GIF)
+    (function () {
+      var container = document.querySelector(".plc-slideshow");
+      if (!container) return;
+      var slides = container.querySelectorAll(".plc-slide");
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 3000);
+    })();
+
+    // Slideshow automático para Maquinado de piezas (efecto tipo GIF)
+    (function () {
+      var container = document.querySelector(".parts-repairs-slideshow");
+      if (!container) return;
+      var slides = container.querySelectorAll(".parts-repairs-slide");
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 3000);
+    })();
   </script>
 
   <!-- Mobile Services tab -->
