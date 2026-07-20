@@ -1,7 +1,26 @@
 ---
+/**
+ * Página de inicio (/).
+ *
+ * Orden de secciones (activas):
+ * 1. Hero — cabecera principal
+ * 2. Services — servicios
+ * 3. Galery — galería
+ * 4. Testimonials — testimonios
+ *
+ * Sección Clients — NO se muestra en la home (retirada a propósito).
+ * Para volver a mostrar la franja de logos:
+ *   import Clients from "../components/Clients.astro";
+ *   y añadir <Clients/> entre <Hero/> y <Services/>.
+ *
+ * Referencia del componente (sin usar aquí):
+ * - `src/components/Clients.astro` (contenedor `.secttion_clients`)
+ * - Logos: `public/img/clients/`
+ * - Estilos: `src/styles/components/clients.css`, `src/styles/pages/global.css`
+ * - GSAP en `src/layouts/Layout.astro` (`[gsap-anim-clientlogo]`)
+ */
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Clients from "../components/Clients.astro";
 import Services from "../components/Services.astro";
 import Galery from "../components/Galery.astro";
 import Testimonials from "../components/Testimonials.astro";
@@ -9,7 +28,6 @@ import Testimonials from "../components/Testimonials.astro";
 
 <Layout title="CBH MECHATOOLING" preloadHero="/img/hero/home.png">
     <Hero/>
-    <Clients/>
     <Services/>
     <Galery/>
     <Testimonials/>
